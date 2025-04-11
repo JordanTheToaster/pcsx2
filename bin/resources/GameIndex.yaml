@@ -425,7 +425,8 @@ PAPX-90506:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 PAPX-90507:
@@ -1335,7 +1336,7 @@ SCAJ-20010:
   gsHWFixes:
     textureInsideRT: 1 # Fixes inside RT shuffling.
 SCAJ-20011:
-  name: "Armored Core 3 - Silent Line"
+  name: "Silent Line - Armored Core"
   region: "NTSC-HK"
   gsHWFixes:
     halfPixelOffset: 2 # Corrects positioning of reflections on suit's surfaces.
@@ -2083,7 +2084,7 @@ SCAJ-20139:
   gsHWFixes:
     halfPixelOffset: 1 # Reduces blurriness.
 SCAJ-20140:
-  name: "Bleach - Erabareshi Tamashi"
+  name: "Bleach - Erabareshi Tamashii"
   region: "NTSC-Unk"
 SCAJ-20141:
   name: "グランディアⅢ"
@@ -2703,7 +2704,7 @@ SCCS-40011:
 SCCS-40012:
   name: "格斗擂台4 进化版"
   name-sort: "Gedou Leitai 4 Jinhuaban"
-  name-en: "Virtua Fighter 4 Evolution"
+  name-en: "Virtua Fighter 4 - Evolution"
   region: "NTSC-C"
 SCCS-40014:
   name: "实况足球 胜利十一人7 国际版"
@@ -3100,7 +3101,7 @@ SCED-51163:
   name: "Official PlayStation 2 Magazine Demo 23"
   region: "PAL-S"
 SCED-51165:
-  name: "This Is Football 2003"
+  name: "This is Football 2003"
   region: "PAL-M7"
 SCED-51166:
   name: "Le Monde des Bleus 2003 - Un Nouveau DÃ©fi"
@@ -3736,7 +3737,7 @@ SCED-52491:
   name: "Athens 2004"
   region: "PAL-M6"
 SCED-52497:
-  name: "This Is Football 2004"
+  name: "This is Football 2004"
   region: "PAL-M4"
 SCED-52549:
   name: "Official PlayStation 2 Magazine Demo 47"
@@ -5165,7 +5166,8 @@ SCES-51190:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCES-51224:
@@ -5228,7 +5230,7 @@ SCES-51592:
   gameFixes:
     - XGKickHack # Fixes SPS.
 SCES-51593:
-  name: "Hardware Online Arena [Beta, Promo & Full Release]"
+  name: "Hardware - Online Arena [Beta, Promo & Full Release]"
   region: "PAL-M4"
   patches:
     "81797E77":
@@ -5394,7 +5396,7 @@ SCES-51971:
   name: "Jet Li - Rise to Honor"
   region: "PAL-E"
 SCES-51977:
-  name: "Hardware Online Arena"
+  name: "Hardware - Online Arena"
   region: "PAL-E"
 SCES-51979:
   name: "Destruction Derby Arenas"
@@ -6192,7 +6194,7 @@ SCES-54094:
   name: "EyeToy - Play Sports"
   region: "PAL-M15"
 SCES-54128:
-  name: "Deutsch Rock-Pop"
+  name: "SingStar Deutsch Rock-Pop"
   region: "PAL-G"
 SCES-54129:
   name: "SingStar La Edad de Oro del Pop Español"
@@ -7022,7 +7024,8 @@ SCKA-20014:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCKA-20015:
@@ -8145,7 +8148,7 @@ SCPS-11024:
 SCPS-11025:
   name: "スペースフィッシャーメン"
   name-sort: "すぺーすふぃっしゃーめん"
-  name-en: "Space Fisherman"
+  name-en: "Space Fishermen"
   region: "NTSC-J"
   compat: 5
   clampModes:
@@ -8200,7 +8203,7 @@ SCPS-11033:
 SCPS-11034:
   name: "ガチャろく2 ～今度は世界一周よ！！～"
   name-sort: "がちゃろく2 こんどはせかいいっしゅうよ！！"
-  name-en: "Gacharoku 2"
+  name-en: "Gacharoku 2 - Kondo wa Sekai Isshuu yo!!"
   region: "NTSC-J"
 SCPS-15001:
   name: "スキャンダル"
@@ -8451,7 +8454,8 @@ SCPS-15033:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCPS-15034:
@@ -9483,7 +9487,8 @@ SCPS-19215:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCPS-19251:
@@ -9601,7 +9606,8 @@ SCPS-19306:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCPS-19307:
@@ -10300,7 +10306,8 @@ SCPS-55048:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCPS-55049:
@@ -10988,7 +10995,8 @@ SCUS-97213:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCUS-97214:
@@ -11021,7 +11029,7 @@ SCUS-97220:
   name: "NHL FaceOff 2003"
   region: "NTSC-U"
 SCUS-97222:
-  name: "Mark of Kri [Demo]"
+  name: "The Mark of Kri [Demo]"
   region: "NTSC-U"
 SCUS-97223:
   name: "NFL GameDay 2003 [Demo]"
@@ -11052,7 +11060,8 @@ SCUS-97229:
   clampModes:
     eeClampMode: 3 # Fixes textbox.
   gsHWFixes:
-    roundSprite: 2 # Fixes font artifacts.
+    halfPixelOffset: 4 # Fixes offset DOF and effects.
+    roundSprite: 1 # Fixes font artifacts.
     cpuSpriteRenderBW: 2 # Fixes lines in geometry.
     cpuSpriteRenderLevel: 2 # Needed for above.
 SCUS-97230:
@@ -11509,7 +11518,7 @@ SCUS-97370:
   name: "NCAA Final Four 2004"
   region: "NTSC-U"
 SCUS-97372:
-  name: "Jet Li-Rise to Honor [Demo]"
+  name: "Jet Li - Rise to Honor [Demo]"
   region: "NTSC-U"
 SCUS-97373:
   name: "989 Sports 2004 Demo Disc"
@@ -12626,7 +12635,7 @@ SLAJ-25005:
   name: "World Soccer Winning Eleven 6 - International"
   region: "NTSC-HK"
 SLAJ-25006:
-  name: "Virtual Fighter 4 - Evolution"
+  name: "Virtua Fighter 4 - Evolution"
   region: "NTSC-Unk"
 SLAJ-25007:
   name: "NBA 2K3"
@@ -13919,7 +13928,7 @@ SLES-50037:
   region: "PAL-M5"
   compat: 5
 SLES-50038:
-  name: "Gradius III & IV"
+  name: "Gradius III and IV"
   region: "PAL-E"
   compat: 5
 SLES-50039:
@@ -14029,10 +14038,10 @@ SLES-50064:
   name: "Stunt GP"
   region: "PAL-M7"
 SLES-50068:
-  name: "Top Gear Daredevil"
+  name: "Top Gear Dare Devil"
   region: "PAL-E"
 SLES-50069:
-  name: "Top Gear Daredevil"
+  name: "Top Gear Dare Devil"
   region: "PAL-E"
 SLES-50071:
   name: "Midnight Club - Street Racing"
@@ -14283,7 +14292,7 @@ SLES-50185:
   region: "PAL-M5"
   compat: 5
 SLES-50186:
-  name: "Heroes of Might and Magic"
+  name: "Heroes of Might and Magic - Quest for the DragonBone Staff"
   region: "PAL-M5"
 SLES-50187:
   name: "Warriors of Might and Magic"
@@ -14446,7 +14455,7 @@ SLES-50247:
   speedHacks:
     eeCycleRate: -3 # Fixes FMV playback.
 SLES-50248:
-  name: "MDK 2 - Armageddon"
+  name: "MDK2 - Armageddon"
   region: "PAL-M5"
 SLES-50252:
   name: "Penny Racers"
@@ -14605,7 +14614,7 @@ SLES-50283:
   name: "WTA Tour Tennis"
   region: "PAL-M3"
 SLES-50284:
-  name: "Silent Scope 2"
+  name: "Silent Scope 2 - Fatal Judgement"
   region: "PAL-M6"
 SLES-50285:
   name: "Police 24-7"
@@ -14879,9 +14888,6 @@ SLES-50431:
   region: "PAL-S"
   gsHWFixes:
     halfPixelOffset: 1 # Fixes black void when upscaling.
-SLES-50432:
-  name: "Tony Hawk Pro Skater 3"
-  region: "PAL-Unk"
 SLES-50433:
   name: "GoDai - Elemental Force"
   region: "PAL-E"
@@ -14893,7 +14899,7 @@ SLES-50435:
   region: "PAL-E"
   compat: 5
 SLES-50436:
-  name: "Tony Hawk Pro Skater 3"
+  name: "Tony Hawk's Pro Skater 3"
   region: "PAL-F"
 SLES-50437:
   name: "Tony Hawk's Pro Skater 3"
@@ -15000,13 +15006,13 @@ SLES-50487:
   region: "PAL-M6"
   compat: 5
 SLES-50495:
-  name: "Who Wants to be a Millionaire - 2nd Edition"
+  name: "Who Wants to Be a Millionaire - 2nd Edition"
   region: "PAL-E"
 SLES-50496:
   name: "Qui veut gagner des millions – Seconde Edition"
   region: "PAL-F"
 SLES-50497:
-  name: "Wer wird Millionaer 2"
+  name: "Wer wird Millionär - 2. Edition"
   region: "PAL-G"
 SLES-50498:
   name: "Grandia II"
@@ -15095,7 +15101,7 @@ SLES-50546:
   name: "LMA Manager 2002"
   region: "PAL-E"
 SLES-50547:
-  name: "Roger Lemerre - La Selection des Champions 2002"
+  name: "Roger Lemerre - La Sélection des Champions 2002"
   region: "PAL-F"
 SLES-50548:
   name: "BDFL Manager 2002"
@@ -15104,7 +15110,7 @@ SLES-50549:
   name: "Football Manager Campionato 2002"
   region: "PAL-I"
 SLES-50550:
-  name: "Manager de Liga 2002"
+  name: "Mánager de Liga 2002"
   region: "PAL-S"
 SLES-50551:
   name: "Tetris Worlds"
@@ -15383,7 +15389,7 @@ SLES-50706:
   name: "Army Men - RTS"
   region: "PAL-M4"
 SLES-50709:
-  name: "Le Maillon Fable"
+  name: "Le Maillon Faible"
   region: "PAL-F"
 SLES-50710:
   name: "Dr. Muto"
@@ -15796,7 +15802,7 @@ SLES-50835:
     vu0ClampMode: 3 # Fixes randomly invalid textures.
     eeClampMode: 2 # Fixes missing/grey texture or geometry ingame.
 SLES-50836:
-  name: "Indiana Jones and The Emperor's Tomb"
+  name: "Indiana Jones and the Emperor's Tomb"
   region: "PAL-E"
   gameFixes:
     - EETimingHack # Fixes texture flicker.
@@ -15881,10 +15887,10 @@ SLES-50850:
   gsHWFixes:
     recommendedBlendingLevel: 2 # Fixes dither patterns.
 SLES-50852:
-  name: "Sven-Goran Eriksson's World Challenge"
+  name: "Sven-Göran Eriksson's World Challenge"
   region: "PAL-E"
 SLES-50853:
-  name: "Marcel DeSaily Pro Football"
+  name: "Marcel Desailly Pro Football"
   region: "PAL-F"
 SLES-50854:
   name: "WM Nationalspieler"
@@ -16087,7 +16093,7 @@ SLES-50954:
   region: "PAL-E"
   compat: 5
 SLES-50955:
-  name: "London Racer 2"
+  name: "London Racer II"
   region: "PAL-E"
   compat: 5
 SLES-50958:
@@ -16153,8 +16159,8 @@ SLES-50986:
   region: "PAL-M4"
   compat: 5
 SLES-50987:
-  name: "The Scorpion King - Rise of an Akkadian"
-  name-sort: "Scorpion King, The - Rise of an Akkadian"
+  name: "The Scorpion King - Rise of the Akkadian"
+  name-sort: "Scorpion King, The - Rise of the Akkadian"
   region: "PAL-M5"
 SLES-50988:
   name: "The Lord of the Rings - The Fellowship of the Ring"
@@ -16208,7 +16214,7 @@ SLES-51019:
   name-en: "Scooby-Doo! Night of 100 Frights"
   region: "PAL-G"
 SLES-51022:
-  name: "Virtual Racer - Jaques Villeneuve"
+  name: "Speed Challenge - Jacques Villeneuve's Racing Vision"
   region: "PAL-E-F"
 SLES-51023:
   name: "LMA Manager 2003"
@@ -16224,7 +16230,7 @@ SLES-51026:
   name: "Football Manager Campionato 2003"
   region: "PAL-I"
 SLES-51027:
-  name: "Manager de Liga 2003"
+  name: "Mánager de Liga 2003"
   region: "PAL-S"
 SLES-51038:
   name: "MX Superfly featuring Ricky Carmichael"
@@ -16446,7 +16452,7 @@ SLES-51118:
   region: "PAL-E"
   compat: 5
 SLES-51124:
-  name: "Turok Evolution"
+  name: "Turok - Evolution"
   region: "PAL-G"
   compat: 5
   gsHWFixes:
@@ -16563,7 +16569,7 @@ SLES-51174:
   region: "PAL-E"
   compat: 5
 SLES-51180:
-  name: "Tom Clancy's The Sum of All Fears"
+  name: "The Sum of All Fears"
   region: "PAL-M5"
   compat: 5
 SLES-51181:
@@ -16895,7 +16901,7 @@ SLES-51260:
   gsHWFixes:
     halfPixelOffset: 2 # Fixes fog lines in the distance.
 SLES-51265:
-  name: "Dynasty Warriors Tactics"
+  name: "Dynasty Tactics"
   region: "PAL-E"
 SLES-51266:
   name: "Dynasty Tactics"
@@ -17018,7 +17024,7 @@ SLES-51307:
     forceEvenSpritePosition: 1 # Fixes font artifacts and out-of-bound 2D textures.
     gpuPaletteConversion: 2 # Fixes micro-stuttering and drops in performance while also reducing hash cache explosions and GS usage.
 SLES-51308:
-  name: "Reel Fishing 3"
+  name: "Reel Fishing III"
   region: "PAL-E"
 SLES-51311:
   name: "Rugrats Royal Ransom"
@@ -17052,7 +17058,7 @@ SLES-51318:
     halfPixelOffset: 1 # Fixes light bleed through objects.
     autoFlush: 1 # Fixes light bloom intensity.
 SLES-51322:
-  name: "Robotech Battlecry"
+  name: "Robotech - Battlecry"
   region: "PAL-M5"
 SLES-51333:
   name: "Dark Angel"
@@ -17193,7 +17199,7 @@ SLES-51383:
   region: "PAL-M4"
   compat: 5
 SLES-51385:
-  name: "Rugrats Rescate Real"
+  name: "Nickelodeon Rugrats - Rescate Real"
   region: "PAL-S"
 SLES-51387:
   name: "World Racing"
@@ -17343,7 +17349,7 @@ SLES-51459:
   name: "Roger Lemerre - La Sélection des Champions 2004"
   region: "PAL-F"
 SLES-51460:
-  name: "Football Manager 2004"
+  name: "Football Manager Campionato 2004"
   region: "PAL-I"
   clampModes:
     vu1ClampMode: 3 # Fixes 3D rendering.
@@ -17440,8 +17446,7 @@ SLES-51507:
   gsHWFixes:
     readTCOnClose: 1 # Fixes render to target getting lost on state/switch.
 SLES-51508:
-  name: "The Hulk"
-  name-sort: "Hulk, The"
+  name: "Hulk"
   region: "PAL-M5"
 SLES-51509:
   name: "World of Outlaws - Sprint Cars"
@@ -17503,7 +17508,7 @@ SLES-51553:
     roundSprite: 2 # Fixes vertical lines and some font artifacts but not completely fixed.
     textureInsideRT: 1 # Fixes rainbow shadow of legions.
 SLES-51554:
-  name: "Cell Damage Overdrive"
+  name: "Cel Damage Overdrive"
   region: "PAL-M5"
   compat: 5
 SLES-51555:
@@ -17568,7 +17573,7 @@ SLES-51602:
   name: "All-Star Baseball 2004 featuring Derek Jeter"
   region: "PAL-E"
 SLES-51603:
-  name: "Seek & Destroy"
+  name: "Seek and Destroy"
   region: "PAL-M5"
 SLES-51605:
   name: "Motorsiege - Warriors of Prime Time"
@@ -17598,7 +17603,7 @@ SLES-51619:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes brightness and striped lines in FMVs.
 SLES-51620:
-  name: "Black and Bruised"
+  name: "Black & Bruised"
   region: "PAL-M5"
 SLES-51621:
   name: "Dirt Track Devils"
@@ -17618,7 +17623,7 @@ SLES-51624:
   gameFixes:
     - XGKickHack # Fixes missing blue lines on the characters in dark areas.
 SLES-51625:
-  name: "Ultimate Mindgames"
+  name: "Ultimate Mind Games"
   region: "PAL-E"
 SLES-51629:
   name: "International Pool Championship"
@@ -17945,9 +17950,6 @@ SLES-51778:
   name: "Summer Heat Beach Volleyball"
   region: "PAL-M5"
   compat: 5
-SLES-51782:
-  name: "Fire Warrior"
-  region: "PAL-E"
 SLES-51783:
   name: "Starsky & Hutch"
   region: "PAL-F-G"
@@ -18083,7 +18085,7 @@ SLES-51823:
   name: "Hunter - The Reckoning Wayward"
   region: "PAL-M3"
 SLES-51824:
-  name: "Colin McRae Rally '04"
+  name: "Colin McRae Rally 04"
   region: "PAL-M5"
   gsHWFixes:
     halfPixelOffset: 4 # Fixes vertical lines and depth lines.
@@ -18107,7 +18109,7 @@ SLES-51828:
     halfPixelOffset: 4 # Aligns post effects.
     nativeScaling: 1 # Fixes post effects.
 SLES-51831:
-  name: "Sphinx and The Cursed Mummy"
+  name: "Sphinx and the Cursed Mummy"
   region: "PAL-M5"
 SLES-51833:
   name: "Premier Manager 2003-2004"
@@ -18638,8 +18640,8 @@ SLES-52015:
   name: "Chevaliers de Baphomet, Les - Le Manuscrit de Voynich"
   region: "PAL-F"
 SLES-52017:
-  name: "The Lord of the Rings - Return of the King"
-  name-sort: "Lord of the Rings, The - Return of the King"
+  name: "The Lord of the Rings - The Return of the King"
+  name-sort: "Lord of the Rings, The - The Return of the King"
   region: "PAL-M5"
   compat: 5
   clampModes:
@@ -18709,7 +18711,7 @@ SLES-52038:
   name: "Terminator 3 - Rebellion der Maschinen"
   region: "PAL-G"
 SLES-52039:
-  name: "Terminator 3 - Rise Of The Machines"
+  name: "Terminator 3 - Rise of the Machines"
   region: "PAL-S"
 SLES-52041:
   name: "Detonator"
@@ -19032,7 +19034,7 @@ SLES-52202:
     autoFlush: 2 # Fixes speed effect intensity.
     minimumBlendingLevel: 2 # Fixes cloud depth rendering.
 SLES-52203:
-  name: "Armored Core 3 - Silent Line"
+  name: "Silent Line - Armored Core"
   region: "PAL-E"
   compat: 5
   gsHWFixes:
@@ -19160,7 +19162,7 @@ SLES-52276:
     autoFlush: 1 # Softens bloom on objects and cars.
     halfPixelOffset: 4 # Fixes misaligned bloom on objects and cars.
 SLES-52277:
-  name: "Riding Spirits 2"
+  name: "Riding Spirits II"
   region: "PAL-M5"
   compat: 5
 SLES-52278:
@@ -19359,10 +19361,10 @@ SLES-52340:
   name: "Rollercoaster World"
   region: "PAL-E"
 SLES-52341:
-  name: "X-Files - Resist or Serve"
+  name: "The X-Files - Resist or Serve"
   region: "PAL-E"
 SLES-52342:
-  name: "Worms - Forts Under Siege"
+  name: "Worms Forts - Under Siege"
   region: "PAL-E-F"
   compat: 5
 SLES-52343:
@@ -19400,7 +19402,7 @@ SLES-52368:
   name: "AFL Live - Premiership Edition"
   region: "PAL-E"
 SLES-52369:
-  name: "Empires of Atlantis"
+  name: "Empire of Atlantis"
   region: "PAL-M3"
 SLES-52370:
   name: "The Mouse Police"
@@ -19562,7 +19564,7 @@ SLES-52423:
   name: "Smash Court Tennis - Pro Tournament 2"
   region: "PAL-Unk"
 SLES-52433:
-  name: "Goblin Commander - Unleash The Horde"
+  name: "Goblin Commander - Unleash the Horde"
   region: "PAL-M3"
 SLES-52439:
   name: "The Suffering"
@@ -19606,7 +19608,7 @@ SLES-52447:
     gpuPaletteConversion: 0 # Stops potential crashes from too many palette textures.
     nativeScaling: 2 # Fixes post processing.
 SLES-52448:
-  name: "Knights of the Temple"
+  name: "Knights of the Temple - Infernal Crusade"
   region: "PAL-M4"
 SLES-52449:
   name: "Kidz Sports Basketball"
@@ -20395,13 +20397,13 @@ SLES-52694:
   name: "BDFL Manager 2005"
   region: "PAL-G"
 SLES-52695:
-  name: "Roger Lemerre - La Selection des Champions"
+  name: "Roger Lemerre - La Sélection des Champions 2005"
   region: "PAL-F"
 SLES-52696:
   name: "Football Manager Campionato 2005"
   region: "PAL-I"
 SLES-52697:
-  name: "Manager de Liga 2005"
+  name: "Mánager de Liga 2005"
   region: "PAL-S"
 SLES-52698:
   name: "Manchester United Manager 2005"
@@ -20604,7 +20606,7 @@ SLES-52761:
   gsHWFixes:
     preloadFrameData: 1 # Fixes background FMV flicker.
 SLES-52766:
-  name: "Godzilla - Save The Earth"
+  name: "Godzilla - Save the Earth"
   region: "PAL-M5"
   compat: 5
 SLES-52767:
@@ -21297,13 +21299,13 @@ SLES-53001:
   name: "NBA Street 3"
   region: "PAL-M3"
 SLES-53002:
-  name: "Samurai Warriors Xtreme Legends"
+  name: "Samurai Warriors - Xtreme Legends"
   region: "PAL-E"
 SLES-53003:
-  name: "Samurai Warriors Xtreme Legends"
+  name: "Samurai Warriors - Xtreme Legends"
   region: "PAL-F"
 SLES-53004:
-  name: "Samurai Warriors Xtreme Legends"
+  name: "Samurai Warriors - Xtreme Legends"
   region: "PAL-G"
 SLES-53005:
   name: "Monster Trux - Off-Road Edition"
@@ -21608,7 +21610,7 @@ SLES-53075:
     halfPixelOffset: 2 # Fixes misaligned lighting and other effects, needs Special otherwise lights flicker.
     nativeScaling: 2 # Fixes lights.
 SLES-53076:
-  name: "Triggerman"
+  name: "Trigger Man"
   region: "PAL-M5"
 SLES-53078:
   name: "Spy vs. Spy"
@@ -21798,13 +21800,13 @@ SLES-53142:
   name: "Doomsday Racers"
   region: "PAL-E"
 SLES-53143:
-  name: "Fantastic Four"
+  name: "Fantastic 4"
   region: "PAL-E"
 SLES-53144:
   name: "4 Fantastiques, Les"
   region: "PAL-F"
 SLES-53145:
-  name: "Fantastic Four"
+  name: "Fantastic 4"
   region: "PAL-G"
 SLES-53146:
   name: "I Fantastici Quattro"
@@ -21899,7 +21901,7 @@ SLES-53191:
     alignSprite: 1 # Fixes vertical lines.
     forceEvenSpritePosition: 1 # De-blurs the 3D image.
 SLES-53192:
-  name: "The Nightmare Before Christmas - Tim Burton's"
+  name: "Tim Burton's The Nightmare Before Christmas - Oogie's Reveng"
   name-sort: "Nightmare Before Christmas, The - Tim Burton's"
   region: "PAL-M5"
   gsHWFixes:
@@ -21950,7 +21952,7 @@ SLES-53200:
     halfPixelOffset: 4 # Aligns post effects.
     nativeScaling: 2 # Fixes post processing and lighting smoothness and position.
 SLES-53201:
-  name: "Saint Seiya Chapter Sanctuary"
+  name: "Saint Seiya - The Sanctuary"
   region: "PAL-M5"
   compat: 5
 SLES-53203:
@@ -22050,7 +22052,7 @@ SLES-53280:
   region: "PAL-M3"
   compat: 5
 SLES-53281:
-  name: "Fantastic Four"
+  name: "Fantastic 4"
   region: "PAL-NL"
 SLES-53282:
   name: "Harvest Fishing"
@@ -22587,7 +22589,7 @@ SLES-53466:
   name: "Il Grande Quiz sul Calcio Italiano"
   region: "PAL-I"
 SLES-53468:
-  name: "Family Boardgames"
+  name: "Family Board Games"
   region: "PAL-M6"
 SLES-53470:
   name: "De Grote Nederlandse Voetbalquiz"
@@ -23878,7 +23880,7 @@ SLES-53803:
   name: "Friends - Das Trivia Game"
   region: "PAL-G"
 SLES-53804:
-  name: "SeaWorld Adventure Parks - Shamu's Deep Sea Adventures"
+  name: "SeaWorld Adventure Park - Shamu's Deep Sea Adventures"
   region: "PAL-E"
   gsHWFixes:
     estimateTextureRegion: 1 # Massively improves performance.
@@ -23907,7 +23909,7 @@ SLES-53812:
   name: "Codename - Kids Next Door - Operation - V.I.D.E.O.G.A.M.E. [Promo]"
   region: "PAL-M4"
 SLES-53813:
-  name: "Friends - Celui qui Repond a Toutes les Questions"
+  name: "Friends - Celui Qui Répond À Toutes les Questions"
   region: "PAL-F"
 SLES-53819:
   name: "Armored Core - Nine Breaker"
@@ -24198,7 +24200,7 @@ SLES-53917:
   name: "G1 Jockey 4"
   region: "PAL-E"
 SLES-53920:
-  name: "Speed Machines 3"
+  name: "Speed Machines III"
   region: "PAL-E"
 SLES-53921:
   name: "Chemist Tycoon"
@@ -24549,7 +24551,7 @@ SLES-54031:
   name-sort: "Da Vinci Code, The"
   region: "PAL-M5"
 SLES-54033:
-  name: "Search and Destroy"
+  name: "Search & Destroy"
   region: "PAL-E"
 SLES-54060:
   name: "Fruit Machine Mania"
@@ -24588,7 +24590,7 @@ SLES-54083:
   name: "Pirates of the Caribbean - The Legend of Jack Sparrow"
   region: "PAL-E"
 SLES-54084:
-  name: "PowerShot Pinball"
+  name: "Powershot Pinball"
   region: "PAL-M6"
   compat: 5
 SLES-54085:
@@ -24630,7 +24632,7 @@ SLES-54108:
   name: "Habitrail - Hamster Ball"
   region: "PAL-I"
 SLES-54109:
-  name: "Off-Road Extreme! [Special Edition]"
+  name: "Offroad Extreme! Special Edition"
   region: "PAL-E"
 SLES-54110:
   name: "Monster Trux Arenas [Special Edition]"
@@ -24887,7 +24889,7 @@ SLES-54171:
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post processing and lighting smoothness.
 SLES-54172:
-  name: "Garfield 2 - Tale of Two Kitties"
+  name: "Garfield 2"
   region: "PAL-M11"
   compat: 5
 SLES-54173:
@@ -24982,7 +24984,7 @@ SLES-54195:
   name: "Turbo Trucks"
   region: "PAL-E"
 SLES-54199:
-  name: "Who Wants to be a Millionaire - Party Edition"
+  name: "Who Wants to Be a Millionaire - Party Edition"
   region: "PAL-E"
 SLES-54200:
   name: "Just Cause"
@@ -25067,7 +25069,7 @@ SLES-54221:
     - "SLES-54221"
     - "SLES-53194"
 SLES-54222:
-  name: "SuperBikes Riding Challenge"
+  name: "Super-Bikes Riding Challenge"
   region: "PAL-M5"
 SLES-54223:
   name: "NASCAR 07"
@@ -25264,7 +25266,7 @@ SLES-54310:
   name: "Open Season"
   region: "PAL-M4"
 SLES-54311:
-  name: "Noddy and The Magic Book"
+  name: "Noddy and the Magic Book"
   region: "PAL-M5"
 SLES-54313:
   name: "Legend of the Dragon"
@@ -25368,7 +25370,7 @@ SLES-54324:
     # UG2 saves can be detected, but the code is unused.
     - "SLES-52725"
 SLES-54326:
-  name: "Raceway - Drag Stock Racing"
+  name: "Raceway - Drag & Stock Racing"
   region: "PAL-E"
 SLES-54331:
   name: "Street Dance"
@@ -26277,7 +26279,7 @@ SLES-54619:
   name: "Pinocchio"
   region: "PAL-M3"
 SLES-54620:
-  name: "Snow White & the 7 Clever Boys"
+  name: "Snow White and the 7 Clever Boys"
   region: "PAL-M3"
   gameFixes:
     - InstantDMAHack # Fixes "VIF1 does not terminate" related stuttering.
@@ -26521,7 +26523,7 @@ SLES-54684:
   name: "Peter Pan"
   region: "PAL-M3"
 SLES-54685:
-  name: "Hansel and Gretel"
+  name: "Hansel & Gretel"
   region: "PAL-M3"
 SLES-54686:
   name: "Impossible Mission"
@@ -26861,7 +26863,7 @@ SLES-54804:
   region: "PAL-E"
   compat: 5
 SLES-54805:
-  name: "Wer Wird Millionar - Party Edition"
+  name: "Wer wird Millionär - Party Edition"
   region: "PAL-G"
 SLES-54806:
   name: "Thrillville - Off the Rails"
@@ -29003,7 +29005,7 @@ SLES-55470:
   gsHWFixes:
     minimumBlendingLevel: 2 # Improves banding.
 SLES-55472:
-  name: "Guitar Hero - Metalica"
+  name: "Guitar Hero - Metallica"
   region: "PAL-M5"
   roundModes:
     vu1RoundMode: 0 # Crashes without.
@@ -29239,7 +29241,7 @@ SLES-55578:
     preloadFrameData: 1 # Fixes icons.
     halfPixelOffset: 4 # Aligns UI and other elements.
 SLES-55579:
-  name: "Bakugan - Battle Brawlers"
+  name: "Bakugan Battle Brawlers"
   region: "PAL-M7"
   compat: 5
   roundModes:
@@ -30454,7 +30456,7 @@ SLKA-25132:
   name: "Mobile Suit Gundam Encounters in Space"
   region: "NTSC-K"
 SLKA-25133:
-  name: "AirForce - Delta Strike"
+  name: "Airforce Delta Strike"
   region: "NTSC-K"
   compat: 5
 SLKA-25134:
@@ -31696,7 +31698,7 @@ SLKA-25406:
   name-sort: "King of Fighters, The - Maximum Impact - Regulation A"
   region: "NTSC-K"
 SLKA-25407:
-  name: "Dragon Ball Z - Sparkling! Meteor"
+  name: "Dragon Ball Z - Sparking! Meteor"
   region: "NTSC-K"
   compat: 5
   gsHWFixes:
@@ -33664,7 +33666,7 @@ SLPM-60126:
 SLPM-60127:
   name: "くりクリミックス [体験版]"
   name-sort: "くりくりみっくす [たいけんばん]"
-  name-en: "Kurikuri Mix [Trial]"
+  name-en: "Kuri Kuri Mix [Trial]"
   region: "NTSC-J"
   speedHacks:
     mtvu: 0 # Prevents broken textures and graphics.
@@ -36410,7 +36412,7 @@ SLPM-62241:
 SLPM-62242:
   name: "撞球 ビリヤードマスター2"
   name-sort: "どうきゅう びりやーどますたー2"
-  name-en: "Doukyu Billiards [LowPrice Version]"
+  name-en: "Doukyuu - Billiard Master 2 [LowPrice Version]"
   region: "NTSC-J"
 SLPM-62244:
   name: "チョロQ HG3"
@@ -37274,7 +37276,7 @@ SLPM-62412:
 SLPM-62413:
   name: "空戦Ⅱ"
   name-sort: "くうせん2"
-  name-en: "Kuusen 2"
+  name-en: "Kuusen II"
   region: "NTSC-J"
 SLPM-62414:
   name: "カラオケレボリューション Dreams & Memories"
@@ -38292,8 +38294,8 @@ SLPM-62606:
     cpuSpriteRenderLevel: 2 # Needed for above.
     gpuPaletteConversion: 2 # Improves FPS and reduces HC size.
 SLPM-62607:
-  name: "式神の城Ⅱ [TAITO The Best]"
-  name-sort: "しきがみのしろ2 [TAITO The Best]"
+  name: "式神の城II [TAITO The Best]"
+  name-sort: "しきがみのしろII [TAITO The Best]"
   name-en: "Shikigami no Shiro II [TAITO BEST]"
   region: "NTSC-J"
 SLPM-62608:
@@ -39384,9 +39386,9 @@ SLPM-65014:
   gameFixes:
     - GoemonTlbHack
 SLPM-65015:
-  name: "決戦Ⅱ"
-  name-sort: "けっせん2"
-  name-en: "Kessen 2"
+  name: "決戦II"
+  name-sort: "けっせんII"
+  name-en: "Kessen II"
   region: "NTSC-J"
   patches:
     7C012435:
@@ -39483,9 +39485,9 @@ SLPM-65030:
   name-en: "Kesse & Kessen2 Super Value Set [Kessen Disc]"
   region: "NTSC-J"
 SLPM-65031:
-  name: "決戦&決戦2 スーパーバリューセット [決戦Ⅱディスク]"
-  name-sort: "けっせん&けっせん2 すーぱーばりゅーせっと [けっせん2でぃすく]"
-  name-en: "Kesse & Kessen2 Super Value Set [Kessen2 Disc]"
+  name: "決戦&決戦II スーパーバリューセット [決戦Ⅱディスク]"
+  name-sort: "けっせん&けっせんII すーぱーばりゅーせっと [けっせん2でぃすく]"
+  name-en: "Kesse & Kessen II Super Value Set [Kessen II Disc]"
   region: "NTSC-J"
   patches:
     7C012435:
@@ -40332,12 +40334,12 @@ SLPM-65185:
 SLPM-65186:
   name: "Thread Colors ～さよならの向こう側～ [限定生産初回BOX]"
   name-sort: "すれっどからーず さよならのむこうがわ [げんていせいさんしょかいBOX]"
-  name-en: "Thread Colors [Limited Edition]"
+  name-en: "Thread Colors - Sayonara no Mukougawa [Limited Edition]"
   region: "NTSC-J"
 SLPM-65187:
   name: "Thread Colors ～さよならの向こう側～ [量産型ふつう版]"
   name-sort: "すれっどからーず さよならのむこうがわ [りょうさんがたふつうばん]"
-  name-en: "Thread Colors [Standard Edition]"
+  name-en: "Thread Colors - Sayonara no Mukougawa [Standard Edition]"
   region: "NTSC-J"
 SLPM-65190:
   name: "Tony Hawk's Pro Skater 3"
@@ -41054,12 +41056,12 @@ SLPM-65300:
 SLPM-65301:
   name: "とらかぷっ！だーっしゅ！！でらっくすぱっく"
   name-sort: "とらかぷっ だーっしゅ でらっくすぱっく"
-  name-en: "Torakapuu! Dash [Limited Edition]"
+  name-en: "ToraCap! Daash!! [Limited Edition]"
   region: "NTSC-J"
 SLPM-65302:
   name: "とらかぷっ！だーっしゅ！！"
   name-sort: "とらかぷっ だーっしゅ"
-  name-en: "Torakapuu! Dash"
+  name-en: "ToraCap! Daash!!"
   region: "NTSC-J"
 SLPM-65303:
   name: "電脳戦機バーチャロン マーズ"
@@ -41763,9 +41765,9 @@ SLPM-65426:
   name-en: "Pro Yakyuu Team wo Tsukuro! 2003"
   region: "NTSC-J"
 SLPM-65427:
-  name: "RSⅡ ～ライディング スピリッツ2～"
-  name-sort: "RS2 らいでぃんぐ すぴりっつ2"
-  name-en: "Riding Spirits 2"
+  name: "RSⅡ ～ライディング スピリッツII～"
+  name-sort: "RS2 らいでぃんぐ すぴりっつII"
+  name-en: "Riding Spirits II"
   region: "NTSC-J"
 SLPM-65428:
   name: "バイオハザード アウトブレイク"
@@ -41854,7 +41856,7 @@ SLPM-65441:
 SLPM-65442:
   name: "ターミネーター3 -Rise of the machines-"
   name-sort: "たーみねーたー3 -Rise of the machines-"
-  name-en: "Terminator 3, The - Rise of the Machines"
+  name-en: "Terminator 3, Rise of the Machines"
   region: "NTSC-J"
 SLPM-65443:
   name: "フロントミッション4"
@@ -42765,7 +42767,7 @@ SLPM-65610:
 SLPM-65611:
   name: "PIZZICATO POLKA ～縁鎖現夜～"
   name-sort: "ぴちかーと ぽるか えんさげんや"
-  name-en: "Pizzicato Polka - Ensa Genya"
+  name-en: "Pizzicato Polka - Suisei Genya"
   region: "NTSC-J"
 SLPM-65612:
   name: "ハリー・ポッターとアズカバンの囚人"
@@ -43276,7 +43278,7 @@ SLPM-65695:
 SLPM-65696:
   name: "SIMPLE2000シリーズ Vol.62 THE スーパーパズルボブルDX"
   name-sort: "しんぷる2000しりーず Vol.  62 THE すーぱーぱずるぼぶるDX"
-  name-en: "Simple 2000 Series Vol. 62 - The Super Puzzle Bubble DX"
+  name-en: "Simple 2000 Series Vol. 62 - The Super Puzzle Bobble DX"
   region: "NTSC-J"
 SLPM-65697:
   name: "シュレック2"
@@ -43317,7 +43319,7 @@ SLPM-65702:
 SLPM-65703:
   name: "ダブルリアクション！ プラス"
   name-sort: "だぶるりあくしょん！ ぷらす"
-  name-en: "Double Reaction Plus"
+  name-en: "Double Reaction! Plus"
   region: "NTSC-J"
 SLPM-65704:
   name: "スタンダード大戦略 電撃戦"
@@ -44584,7 +44586,7 @@ SLPM-65922:
 SLPM-65923:
   name: "Canvas ～セピア色のモチーフ～ [ベスト版]"
   name-sort: "きゃんばす ～せぴあいろのもちーふ～ [べすとばん]"
-  name-en: "Canvas [Best Version]"
+  name-en: "Canvas - Sepia-iro no Motif [Best Version]"
   region: "NTSC-J"
 SLPM-65924:
   name: "この晴れた空の下で [数量限定版]"
@@ -46130,7 +46132,7 @@ SLPM-66172:
 SLPM-66175:
   name: "悪魔城ドラキュラ 闇の呪印"
   name-sort: "あくまじょうどらきゅら やみのじゅいん"
-  name-en: "Akumajo Dracula - Yami no Juin"
+  name-en: "Akumajou Dracula - Yami no Juin"
   region: "NTSC-J"
   compat: 5
   clampModes:
@@ -48419,12 +48421,12 @@ SLPM-66530:
 SLPM-66531:
   name: "水の旋律2～緋の記憶～ [限定版]"
   name-sort: "みずのせんりつ2 ひのきおく [げんていばん]"
-  name-en: "Mizu no Senritsu 2 [Limited Edition]"
+  name-en: "Mizu no Senritsu 2 - Hi no Kioku [Limited Edition]"
   region: "NTSC-J"
 SLPM-66532:
   name: "水の旋律2～緋の記憶～"
   name-sort: "みずのせんりつ2 ひのきおく"
-  name-en: "Mizu no Senritsu 2"
+  name-en: "Mizu no Senritsu 2 - Hi no Kioku"
   region: "NTSC-J"
 SLPM-66533:
   name: "ポップンミュージック 13 カーニバル"
@@ -48434,12 +48436,12 @@ SLPM-66533:
 SLPM-66534:
   name: "龍刻 Ryu-Koku [限定版]"
   name-sort: "りゅうこく [げんていばん]"
-  name-en: "Ryu Koku [Limited Edition]"
+  name-en: "Ryu-Koku [Limited Edition]"
   region: "NTSC-J"
 SLPM-66535:
   name: "龍刻 Ryu-Koku [通常版]"
   name-sort: "りゅうこく [つうじょうばん]"
-  name-en: "Ryu Koku [Standard Edition]"
+  name-en: "Ryu-Koku [Standard Edition]"
   region: "NTSC-J"
 SLPM-66536:
   name: "ARIA The NATURAL ～遠い記憶のミラージュ～"
@@ -48469,7 +48471,7 @@ SLPM-66539:
 SLPM-66542:
   name: "戦国無双2 Empires"
   name-sort: "せんごくむそう2 えんぱいあーず"
-  name-en: "Sengoku Musou 2 Empires"
+  name-en: "Sengoku Musou 2 - Empires"
   region: "NTSC-J"
 SLPM-66543:
   name: "Yo-Jin-Bo ～運命のフロイデ～"
@@ -49234,7 +49236,7 @@ SLPM-66667:
 SLPM-66668:
   name: "悪魔城ドラキュラ 闇の呪印 [KONAMI the Best]"
   name-sort: "あくまじょうどらきゅら やみのじゅいん [KONAMI the Best]"
-  name-en: "Akumajo Dracula - Yami no Juin [KONAMI The BEST]"
+  name-en: "Akumajou Dracula - Yami no Juin [KONAMI The BEST]"
   region: "NTSC-J"
   clampModes:
     vuClampMode: 0 # Fixes SPS with microVU.
@@ -50295,7 +50297,7 @@ SLPM-66839:
 SLPM-66840:
   name: "水の旋律2～緋の記憶～ [BEST HIT セレクション]"
   name-sort: "みずのせんりつ2 ひのきおく [BEST HIT せれくしょん]"
-  name-en: "Mizu no Senritsu 2 [Best Hit Selection]"
+  name-en: "Mizu no Senritsu 2 - Hi no Kioku [Best Hit Selection]"
   region: "NTSC-J"
 SLPM-66841:
   name: "ウィル・オ・ウィスプ [限定版]"
@@ -51830,7 +51832,7 @@ SLPM-74206:
 SLPM-74208:
   name: "天外魔境II MANJI MARU [PlayStation2 the Best]"
   name-sort: "てんがいまきょう2 MANJI MARU [PlayStation2 the Best]"
-  name-en: "Tengai Makyou 2 - Manjimaru [PlayStation2 the Best]"
+  name-en: "Tengai Makyou II - Manji Maru [PlayStation2 the Best]"
   region: "NTSC-J"
 SLPM-74209:
   name: "侍道2 決闘版 [PlayStation2 the Best]"
@@ -52529,7 +52531,7 @@ SLPS-20001:
 SLPS-20002:
   name: "撞球 ビリヤードマスター2"
   name-sort: "どうきゅう びりやーどますたー2"
-  name-en: "Doukyu Billiards"
+  name-en: "Doukyuu - Billiard Master 2"
   region: "NTSC-J"
   compat: 5
 SLPS-20003:
@@ -52647,7 +52649,7 @@ SLPS-20021:
 SLPS-20022:
   name: "オールスター・プロレスリング"
   name-sort: "おーるすたー・ぷろれすりんぐ"
-  name-en: "All-Star Pro Wrestling"
+  name-en: "All Star Pro-Wrestling"
   region: "NTSC-J"
 SLPS-20023:
   name: "クロスファイア"
@@ -52784,7 +52786,7 @@ SLPS-20047:
 SLPS-20048:
   name: "テーマパーク2001"
   name-sort: "てーまぱーく2001"
-  name-en: "Sim Theme Park"
+  name-en: "Theme Park 2001"
   region: "NTSC-J"
 SLPS-20050:
   name: "ハッピー！ ハッピー！！ ボーダーズ in Hokkaido ルスツリゾート"
@@ -52859,7 +52861,7 @@ SLPS-20062:
 SLPS-20064:
   name: "トップギア・デアデビル"
   name-sort: "とっぷぎあ・であでびる"
-  name-en: "Top Gear Daredevil"
+  name-en: "Top Gear Dare Devil"
   region: "NTSC-J"
 SLPS-20065:
   name: "MADDEN NFL スーパーボウル 2001"
@@ -55107,7 +55109,7 @@ SLPS-25012:
 SLPS-25013:
   name: "くりクリミックス"
   name-sort: "くりくりみっくす"
-  name-en: "Kurikuri Mix"
+  name-en: "Kuri Kuri Mix"
   region: "NTSC-J"
   speedHacks:
     mtvu: 0 # Prevents broken textures and graphics.
@@ -55253,7 +55255,7 @@ SLPS-25034:
 SLPS-25035:
   name: "モンスターファーム"
   name-sort: "もんすたーふぁーむ"
-  name-en: "Monster Farm 3"
+  name-en: "Monster Farm"
   region: "NTSC-J"
   clampModes:
     vuClampMode: 3 # Fixes SPS in game.
@@ -55319,7 +55321,7 @@ SLPS-25043:
 SLPS-25044:
   name: "エヴァーグレイスⅡ"
   name-sort: "えゔぁーぐれいす2"
-  name-en: "Evergrace 2"
+  name-en: "Evergrace II"
   region: "NTSC-J"
   gsHWFixes:
     preloadFrameData: 1 # Fixes textures and flickering such as the wall and sky.
@@ -56870,7 +56872,7 @@ SLPS-25318:
 SLPS-25319:
   name: "ケロケロキング スーパーDX"
   name-sort: "けろけろきんぐ すーぱーDX"
-  name-en: "Kero Kero King DX Plus"
+  name-en: "Kero Kero King Super DX"
   region: "NTSC-J"
 SLPS-25320:
   name: "犬夜叉 呪詛の仮面"
@@ -57678,7 +57680,7 @@ SLPS-25445:
 SLPS-25447:
   name: "トップをねらえ！"
   name-sort: "とっぷをねらえ"
-  name-en: "Top wo Nerae! Gunbuster"
+  name-en: "Top o Nerae! GunBuster"
   region: "NTSC-J"
 SLPS-25448:
   name: "THE KING OF FIGHTERS 94 RE-BOUT [スペシャル限定版]"
@@ -58594,7 +58596,7 @@ SLPS-25605:
 SLPS-25606:
   name: "絶体絶命都市2 -凍てついた記憶たち-"
   name-sort: "ぜったいぜつめいとし2 -いてついたきおくたち-"
-  name-en: "Zettai Zetsumei Toshi 2 - Itetsuita Kioutachi"
+  name-en: "Zettai Zetsumei Toshi 2 - Itetsuita Kioku-tachi"
   region: "NTSC-J"
   compat: 5
   gsHWFixes:
@@ -59420,7 +59422,7 @@ SLPS-25735:
 SLPS-25736:
   name: "サムライスピリッツ天下一剣客伝 [SNK BEST COLLECTION]"
   name-sort: "さむらいすぴりっつてんかいちけんかくでん [SNK BEST COLLECTION]"
-  name-en: "Samurai Spirits - Tenkaichi Kenkakuten [SNK Best]"
+  name-en: "Samurai Spirits - Tenka-ichi Kenkakuden [SNK Best]"
   region: "NTSC-J"
 SLPS-25737:
   name: "ネオジオバトルコロシアム [SNK BEST COLLECTION]"
@@ -61861,7 +61863,7 @@ SLUS-20011:
   region: "NTSC-U"
   compat: 5
 SLUS-20012:
-  name: "Super Car Street Challenge"
+  name: "Supercar Street Challenge"
   region: "NTSC-U"
 SLUS-20013:
   name: "Tony Hawk's Pro Skater 3"
@@ -61920,7 +61922,7 @@ SLUS-20028:
   gsHWFixes:
     recommendedBlendingLevel: 4 # Fixes missing lighting.
 SLUS-20029:
-  name: "Top Gear Daredevil"
+  name: "Top Gear Dare Devil"
   region: "NTSC-U"
   compat: 5
 SLUS-20032:
@@ -61956,7 +61958,7 @@ SLUS-20039:
   name: "Top Gear Dare Devil"
   region: "NTSC-U"
 SLUS-20040:
-  name: "Gradius III & IV"
+  name: "Gradius III and IV"
   region: "NTSC-U"
   compat: 5
 SLUS-20041:
@@ -61980,8 +61982,8 @@ SLUS-20044:
   region: "NTSC-U"
   compat: 5
 SLUS-20045:
-  name: "The Legend of Alon Dar"
-  name-sort: "Legend of Alon Dar, The"
+  name: "The Legend of Alon D'ar"
+  name-sort: "Legend of Alon D'ar, The"
   region: "NTSC-U"
   compat: 5
 SLUS-20047:
@@ -62133,7 +62135,7 @@ SLUS-20084:
   region: "NTSC-U"
   compat: 5
 SLUS-20085:
-  name: "Silpheed Lost Planet"
+  name: "Silpheed - The Lost Planet"
   region: "NTSC-U"
   compat: 5
 SLUS-20086:
@@ -62192,7 +62194,7 @@ SLUS-20098:
   region: "NTSC-U"
   compat: 5
 SLUS-20099:
-  name: "Theme Park Rollercoaster"
+  name: "Theme Park Roller Coaster"
   region: "NTSC-U"
   compat: 5
 SLUS-20100:
@@ -62217,7 +62219,7 @@ SLUS-20104:
   region: "NTSC-U"
   compat: 5
 SLUS-20105:
-  name: "MDK 2 - Armageddon"
+  name: "MDK2 - Armageddon"
   region: "NTSC-U"
   compat: 5
 SLUS-20108:
@@ -62412,7 +62414,7 @@ SLUS-20154:
         patch=1,EE,0026918c,word,00000000
         patch=1,EE,002690d4,word,00000000
 SLUS-20158:
-  name: "Heroes of Might and Magic"
+  name: "Heroes of Might and Magic - Quest for the DragonBone Staff"
   region: "NTSC-U"
   compat: 5
 SLUS-20159:
@@ -62505,7 +62507,7 @@ SLUS-20182:
     halfPixelOffset: 4 # Aligns post effects.
     autoFlush: 1 # Fixes ghosting.
 SLUS-20183:
-  name: "Tiny Toon Adventures - Defenders Of The Universe"
+  name: "Tiny Toon Adventures - Defenders of the Universe"
   region: "NTSC-U"
   compat: 5
 SLUS-20184:
@@ -62610,7 +62612,7 @@ SLUS-20210:
   region: "NTSC-U"
   compat: 5
 SLUS-20211:
-  name: "Top Gun - Combat Zone"
+  name: "Top Gun - Combat Zones"
   region: "NTSC-U"
   compat: 5
 SLUS-20212:
@@ -62863,7 +62865,7 @@ SLUS-20261:
   region: "NTSC-U"
   compat: 5
 SLUS-20262:
-  name: "Rugby 2002"
+  name: "Rugby"
   region: "NTSC-U"
 SLUS-20263:
   name: "Madden NFL 2002"
@@ -62884,7 +62886,7 @@ SLUS-20265:
   gsHWFixes:
     recommendedBlendingLevel: 4 # Fixes lighting
 SLUS-20266:
-  name: "NASCAR - Thunder 2002"
+  name: "NASCAR Thunder 2002"
   region: "NTSC-U"
   compat: 5
 SLUS-20267:
@@ -62922,7 +62924,7 @@ SLUS-20274:
   name: "City Crisis"
   region: "NTSC-U"
 SLUS-20275:
-  name: "Kessen 2"
+  name: "Kessen II"
   region: "NTSC-U"
   compat: 5
   patches:
@@ -63372,7 +63374,7 @@ SLUS-20364:
   gameFixes:
     - VUSyncHack # Fixes the inverted legs.
 SLUS-20365:
-  name: "Pirates - Legend of Black Kat"
+  name: "Pirates - The Legend of Black Kat"
   region: "NTSC-U"
   compat: 5
 SLUS-20366:
@@ -63441,7 +63443,8 @@ SLUS-20378:
         patch=1,EE,001af84c,word,daa70010
         patch=1,EE,001af850,word,4a000038
 SLUS-20379:
-  name: "Dark Angel - James Cameron's"
+  name: "James Cameron's Dark Angel"
+  name-sort: "Dark Angel, James Cameron's"
   region: "NTSC-U"
 SLUS-20380:
   name: "Jurassic Park - Operation Genesis"
@@ -63672,7 +63675,7 @@ SLUS-20421:
   region: "NTSC-U"
   compat: 5
 SLUS-20422:
-  name: "The Hulk"
+  name: "Hulk"
   name-sort: "Hulk, The"
   region: "NTSC-U"
   compat: 5
@@ -63795,7 +63798,7 @@ SLUS-20443:
   region: "NTSC-U"
   compat: 5
 SLUS-20444:
-  name: "Tankers"
+  name: "Tankers - Smoking Barrels"
   region: "NTSC-U"
 SLUS-20445:
   name: "Robot Alchemic Drive - R.A.D."
@@ -64129,7 +64132,7 @@ SLUS-20508:
     halfPixelOffset: 2 # Reduces post misalignment.
     nativeScaling: 2 # Fixes remaining post misalignment.
 SLUS-20509:
-  name: "Soccer Slam - Sega Sports"
+  name: "Sega Soccer Slam"
   region: "NTSC-U"
   compat: 5
   gameFixes:
@@ -64208,7 +64211,7 @@ SLUS-20526:
   name: "RockSteady ~~UNRELEASED~~"
   region: "NTSC-U"
 SLUS-20527:
-  name: "Butt Ugly Martians - Zoom or Doom!"
+  name: "Butt-Ugly Martians - Zoom or Doom!"
   region: "NTSC-U"
   compat: 5
   clampModes:
@@ -64361,7 +64364,7 @@ SLUS-20554:
     autoFlush: 1 # Fixes motion blur effect.
     halfPixelOffset: 4 # Aligns blur from upscaling.
 SLUS-20555:
-  name: "Reel Fishing 3"
+  name: "Reel Fishing III"
   region: "NTSC-U"
   compat: 5
 SLUS-20556:
@@ -64778,7 +64781,8 @@ SLUS-20634:
   region: "NTSC-U"
   compat: 5
 SLUS-20635:
-  name: "Muppets Party Cruise, Jim Henson's"
+  name: "Jim Henson's Muppets Party Cruise"
+  name-sort: "Muppets Party Cruise, Jim Henson's"
   region: "NTSC-U"
   compat: 5
   speedHacks:
@@ -64829,7 +64833,7 @@ SLUS-20643:
   gsHWFixes:
     alignSprite: 1 # Fixes vertical lines.
 SLUS-20644:
-  name: "Armored Core 3 - Silent Line"
+  name: "Silent Line - Armored Core"
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
@@ -65172,7 +65176,7 @@ SLUS-20707:
   region: "NTSC-U"
   compat: 5
 SLUS-20709:
-  name: "Batman - Rise of Sin-Tzu"
+  name: "Batman - Rise of Sin Tzu"
   region: "NTSC-U"
   compat: 5
   speedHacks:
@@ -65748,7 +65752,7 @@ SLUS-20813:
   name: "Plague of Darkness"
   region: "NTSC-U"
 SLUS-20814:
-  name: "Max Payne 2 - Fall of Max Payne"
+  name: "Max Payne 2 - The Fall of Max Payne"
   region: "NTSC-U"
   compat: 5
   clampModes:
@@ -65936,8 +65940,8 @@ SLUS-20851:
         patch=0,EE,001A3BA4,word,484A8800
         patch=0,EE,001A3BA8,word,4B0C682C
 SLUS-20852:
-  name: "The Terminator 3 - The Redemption"
-  name-sort: "Terminator 3, The - The Redemption"
+  name: "Terminator 3 - The Redemption"
+  name-sort: "Terminator 3, The Redemption"
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
@@ -65985,7 +65989,8 @@ SLUS-20859:
   region: "NTSC-U"
   compat: 5
 SLUS-20860:
-  name: "Nightmare Before Christmas, Tim Burton's The - Oogie's Revenge"
+  name: "Tim Burton's The Nightmare Before Christmas - Oogie's Revenge"
+  name-sort: "Nightmare Before Christmas, Tim Burton's The - Oogie's Revenge"
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
@@ -66248,7 +66253,7 @@ SLUS-20903:
   clampModes:
     vu1ClampMode: 3 # Fixes the trophies.
 SLUS-20904:
-  name: "Nickelodeon SpongeBob SquarePants - The Movie"
+  name: "Nickelodeon The SpongeBob SquarePants Movie"
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
@@ -66966,7 +66971,7 @@ SLUS-21013:
     halfPixelOffset: 2 # Aligns post effects.
     nativeScaling: 2 # Fixes post effects.
 SLUS-21014:
-  name: "High Roller Casino"
+  name: "High Rollers Casino"
   region: "NTSC-U"
   compat: 5
 SLUS-21015:
@@ -67222,10 +67227,6 @@ SLUS-21054:
     vuClampMode: 3 # Fixes SPS when the solar surfer's engines are inactive.
   gameFixes:
     - EETimingHack # Fixes hang before going ingame.
-SLUS-21056:
-  name: "The Cabal ~~CANCELLED~~"
-  name-sort: "Cabal, The ~~CANCELLED~~"
-  region: "NTSC-U"
 SLUS-21057:
   name: "TY the Tasmanian Tiger 2 - Bush Rescue"
   region: "NTSC-U"
@@ -67303,7 +67304,7 @@ SLUS-21070:
   name: "Final Fantasy XI - Chains of Promathia"
   region: "NTSC-U"
 SLUS-21071:
-  name: "Nightmare of Druaga"
+  name: "The Nightmare of Druaga - Fushigino Dungeon"
   region: "NTSC-U"
   compat: 5
 SLUS-21072:
@@ -67402,7 +67403,7 @@ SLUS-21091:
   region: "NTSC-U"
   compat: 5
 SLUS-21093:
-  name: "Worms Forts - Under Siege!"
+  name: "Worms Forts - Under Siege"
   region: "NTSC-U"
   compat: 5
 SLUS-21094:
@@ -68713,7 +68714,7 @@ SLUS-21287:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
 SLUS-21288:
-  name: "American Chopper 2"
+  name: "American Chopper 2 - Full Throttle"
   region: "NTSC-U"
   compat: 5
 SLUS-21289:
@@ -68864,7 +68865,7 @@ SLUS-21312:
     halfPixelOffset: 4 # Fixes post alignment.
     nativeScaling: 1 # Fixes post effect.
 SLUS-21313:
-  name: "Friends - The One with all the Trivia"
+  name: "Friends - The One with All the Trivia"
   region: "NTSC-U"
   compat: 5
 SLUS-21314:
@@ -69333,7 +69334,7 @@ SLUS-21379:
   region: "NTSC-U"
   compat: 5
 SLUS-21380:
-  name: "Snoopy vs. The Red Baron"
+  name: "Snoopy vs. the Red Baron"
   region: "NTSC-U"
   compat: 5
   clampModes:
@@ -69371,8 +69372,8 @@ SLUS-21384:
   region: "NTSC-U"
   compat: 5
 SLUS-21385:
-  name: "The Godfather"
-  name-sort: "Godfather, The"
+  name: "The Godfather - The Game"
+  name-sort: "Godfather, The - The Game"
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
@@ -69500,8 +69501,8 @@ SLUS-21405:
   gsHWFixes:
     PCRTCOffsets: 1 # Stops screen shaking.
 SLUS-21406:
-  name: "The Godfather - Collector's Edition"
-  name-sort: "Godfather, The - Collector's Edition"
+  name: "The Godfather - Limited Edition"
+  name-sort: "Godfather, The - Limited Edition"
   region: "NTSC-U"
   gsHWFixes:
     textureInsideRT: 1 # Required for complex offset shuffles.
@@ -69696,7 +69697,7 @@ SLUS-21433:
     nativeScaling: 1 # Fixes misaligned bloom.
     mipmap: 0 # Currently totally breaks player uniform rendering if mipmapping is enabled.
 SLUS-21434:
-  name: "Superman Returns - The Video Game"
+  name: "Superman Returns"
   region: "NTSC-U"
   compat: 4
   gameFixes:
@@ -69754,8 +69755,8 @@ SLUS-21442:
   region: "NTSC-U"
   compat: 5
 SLUS-21443:
-  name: "The DaVinci Code"
-  name-sort: "DaVinci Code, The"
+  name: "The Da Vinci Code"
+  name-sort: "Da Vinci Code, The"
   region: "NTSC-U"
   compat: 5
 SLUS-21444:
@@ -69936,7 +69937,7 @@ SLUS-21473:
   region: "NTSC-U"
   compat: 5
 SLUS-21474:
-  name: "History Channel - Civil War - A Nation Divided"
+  name: "The History Channel - Civil War - A Nation Divided"
   region: "NTSC-U"
   compat: 5
 SLUS-21475:
@@ -70097,7 +70098,8 @@ SLUS-21494:
     - "SLAJ-25075" # Original wrong Black Edition serial.
     - "SLUS-21065" # UG2 saves can be detected, but the code is unused.
 SLUS-21495:
-  name: "Sudoku, Carol Vorderman's"
+  name: "Carol Vorderman's Sudoku"
+  name-sort: "Sudoku, Carol Vorderman,s"
   region: "NTSC-U"
   compat: 5
 SLUS-21496:
@@ -70181,7 +70183,7 @@ SLUS-21543:
     - "SLUS-21543"
     - "SLUS-21410"
 SLUS-21544:
-  name: "Fantastic 4 - Rise of Silver Surfer"
+  name: "Fantastic Four - Rise of the Silver Surfer"
   region: "NTSC-U"
   compat: 5
   speedHacks:
@@ -70512,7 +70514,7 @@ SLUS-21602:
     halfPixelOffset: 2 # Fixes alignment of post processing.
     nativeScaling: 1 # Fixes post processing effect.
 SLUS-21603:
-  name: "Soul Nomad & The World Eaters"
+  name: "Soul Nomad & the World Eaters"
   region: "NTSC-U"
   compat: 5
 SLUS-21604:
@@ -71082,7 +71084,7 @@ SLUS-21701:
         patch=1,EE,001a9d98,word,484E9000
         patch=1,EE,001a9d9c,word,4BDBD9FF
 SLUS-21702:
-  name: "Fire Pro Wrestling - Returns"
+  name: "Fire Pro Wrestling Returns"
   region: "NTSC-U"
   compat: 5
 SLUS-21703:
@@ -71129,7 +71131,7 @@ SLUS-21711:
   clampModes:
     vuClampMode: 3 # Fixes SPS.
 SLUS-21712:
-  name: "History Channel - Battle for the Pacific"
+  name: "The History Channel - Battle for the Pacific"
   region: "NTSC-U"
   compat: 5
 SLUS-21713:
@@ -71285,7 +71287,7 @@ SLUS-21737:
   region: "NTSC-U"
   compat: 5
 SLUS-21738:
-  name: "Nitro Bike"
+  name: "Nitrobike"
   region: "NTSC-U"
   compat: 5
 SLUS-21739:
@@ -71789,7 +71791,7 @@ SLUS-21834:
   clampModes:
     vuClampMode: 3 # Needs both vu0 and vu1 extra+sign clamping to fix crash on flume ride.
 SLUS-21835:
-  name: "History Channel - Civil War Secret Mission"
+  name: "History Civil War - Secret Missions"
   region: "NTSC-U"
   compat: 5
 SLUS-21836:
@@ -71869,8 +71871,8 @@ SLUS-21851:
   name: "NCAA Basketball '09"
   region: "NTSC-U"
 SLUS-21852:
-  name: "The Tale Of Despereaux"
-  name-sort: "Tale Of Despereaux, The"
+  name: "The Tale of Despereaux"
+  name-sort: "Tale of Despereaux, The"
   region: "NTSC-U"
   compat: 5
 SLUS-21853:
@@ -72136,7 +72138,7 @@ SLUS-21901:
   region: "NTSC-U"
   compat: 5
 SLUS-21902:
-  name: "Bakugan - Battle Brawlers"
+  name: "Bakugan Battle Brawlers"
   region: "NTSC-U"
   compat: 5
   roundModes:
@@ -72443,7 +72445,7 @@ SLUS-28014:
   name: "Matt Hoffman's Pro BMX 2 [Trade Demo]"
   region: "NTSC-U"
 SLUS-28015:
-  name: "Gun Grave [Trade Demo]"
+  name: "Gungrave [Trade Demo]"
   region: "NTSC-U"
 SLUS-28016:
   name: "Shinobi [Trade Demo]"
@@ -73470,7 +73472,7 @@ TCES-52389:
     roundSprite: 1 # Fixes misaligned text.
     halfPixelOffset: 2 # Fixes minor ghosting on objects.
 TCES-52426:
-  name: "This Is Football 2005"
+  name: "This is Football 2005"
   region: "PAL-Unk"
 TCES-52456:
   name: "Ratchet & Clank 3 Beta Trial Code"
