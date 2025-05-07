@@ -402,6 +402,7 @@ void Pcsx2Config::SpeedhackOptions::LoadSave(SettingsWrapper& wrap)
 	SettingsWrapBitfield(EECycleRate);
 	SettingsWrapBitfield(EECycleSkip);
 	SettingsWrapBitBool(fastCDVD);
+	SettingsWrapBitBool(slowCDVD);
 	SettingsWrapBitBool(IntcStat);
 	SettingsWrapBitBool(WaitLoop);
 	SettingsWrapBitBool(vuFlagHack);

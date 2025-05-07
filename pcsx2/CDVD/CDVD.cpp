@@ -71,6 +71,11 @@ static void CDVDSECTORREADY_INT(u32 eCycle)
 		if (eCycle < Cdvd_FullSeek_Cycles && eCycle > 1)
 			eCycle *= 0.5f;
 	}
+	if (EmuConfig.Speedhacks.slowCDVD)
+	{
+		if (eCycle < Cdvd_FullSeek_Cycles && eCycle > 1)
+			eCycle *= 2.0f;
+	}
 
 	PSX_INT(IopEvt_CdvdSectorReady, eCycle);
 }
@@ -83,6 +88,12 @@ static void CDVDREAD_INT(u32 eCycle)
 	{
 		if (eCycle < Cdvd_FullSeek_Cycles && eCycle > 1)
 			eCycle *= 0.5f;
+	}
+	// Make it slow.
+	if (EmuConfig.Speedhacks.slowCDVD)
+	{
+		if (eCycle < Cdvd_FullSeek_Cycles && eCycle > 1)
+			eCycle *= 2.0f;
 	}
 
 	PSX_INT(IopEvt_CdvdRead, eCycle);

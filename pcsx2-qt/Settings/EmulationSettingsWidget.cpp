@@ -45,6 +45,7 @@ EmulationSettingsWidget::EmulationSettingsWidget(SettingsWindow* dialog, QWidget
 	SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.MTVU, "EmuCore/Speedhacks", "vuThread", false);
 	SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.threadPinning, "EmuCore", "EnableThreadPinning", false);
 	SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.fastCDVD, "EmuCore/Speedhacks", "fastCDVD", false);
+	SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.slowCDVD, "EmuCore/Speedhacks", "slowCDVD", false);
 	SettingWidgetBinder::BindWidgetToBoolSetting(sif, m_ui.precacheCDVD, "EmuCore", "CdvdPrecache", false);
 
 	if (m_dialog->isPerGameSettings())
@@ -87,7 +88,9 @@ EmulationSettingsWidget::EmulationSettingsWidget(SettingsWindow* dialog, QWidget
 
 		// Allow for FastCDVD for per-game settings only
 		m_ui.systemSettingsLayout->removeWidget(m_ui.fastCDVD);
+		m_ui.systemSettingsLayout->removeWidget(m_ui.slowCDVD);
 		m_ui.fastCDVD->deleteLater();
+		m_ui.slowCDVD->deleteLater();
 	}
 
 	const std::optional<int> cycle_rate =
@@ -129,6 +132,8 @@ EmulationSettingsWidget::EmulationSettingsWidget(SettingsWindow* dialog, QWidget
 		tr("Generally a speedup on CPUs with 4 or more cores. "
 		   "Safe for most games, but a few are incompatible and may hang."));
 	dialog->registerWidgetHelp(m_ui.fastCDVD, tr("Enable Fast CDVD"), tr("Unchecked"),
+		tr("Fast disc access, less loading times. Check HDLoader compatibility lists for known games that have issues with this."));
+	dialog->registerWidgetHelp(m_ui.slowCDVD, tr("Enable Slow CDVD"), tr("Unchecked"),
 		tr("Fast disc access, less loading times. Check HDLoader compatibility lists for known games that have issues with this."));
 	dialog->registerWidgetHelp(m_ui.precacheCDVD, tr("Enable CDVD Precaching"), tr("Unchecked"),
 		tr("Loads the disc image into RAM before starting the virtual machine. Can reduce stutter on systems with hard drives that "
