@@ -56,10 +56,10 @@ set KDDOCKWIDGETS=2.2.3
 set PLUTOVG=0.0.13
 set PLUTOSVG=0.0.6
 
-set SHADERC=2024.1
-set SHADERC_GLSLANG=142052fa30f9eca191aa9dcf65359fcaed09eeec
-set SHADERC_SPIRVHEADERS=5e3ad389ee56fca27c9705d093ae5387ce404df4
-set SHADERC_SPIRVTOOLS=dd4b663e13c07fea4fbb3f70c1c91c86731099f7
+set SHADERC=2025.2
+set SHADERC_GLSLANG=fc9889c889561c5882e83819dcaffef5ed45529b
+set SHADERC_SPIRVHEADERS=aa6cef192b8e693916eb713e7a9ccadf06062ceb
+set SHADERC_SPIRVTOOLS=f289d047f49fb60488301ec62bafab85573668cc
 
 call :downloadfile "freetype-%FREETYPE%.tar.gz" https://sourceforge.net/projects/freetype/files/freetype2/%FREETYPE%/freetype-%FREETYPE%.tar.gz/download 5c3a8e78f7b24c20b25b54ee575d6daa40007a5f4eea2845861c3409b3021747 || goto error
 call :downloadfile "harfbuzz-%HARFBUZZ%.zip" https://github.com/harfbuzz/harfbuzz/archive/refs/tags/%HARFBUZZ%.zip 850cb5e38e21106c0abba86c5b73f8f74b9a32d7725505901d081080b0d3f0b3 || goto error
@@ -79,10 +79,10 @@ call :downloadfile "KDDockWidgets-%KDDOCKWIDGETS%.zip" "https://github.com/KDAB/
 call :downloadfile "plutovg-%PLUTOVG%.zip" "https://github.com/sammycage/plutovg/archive/v%PLUTOVG%.zip" e313baaa7c934503ef601c909661a84e5b795dfa12f0354721cac7a9c27be47e || goto error
 call :downloadfile "plutosvg-%PLUTOSVG%.zip" "https://github.com/sammycage/plutosvg/archive/v%PLUTOSVG%.zip" 24826a70d0b168a66eb16ec9d7eeeba0d4ca9d4babc1199889d374918008426e || goto error
 
-call :downloadfile "shaderc-%SHADERC%.zip" "https://github.com/google/shaderc/archive/refs/tags/v%SHADERC%.zip" 6c9f42ed6bf42750f5369b089909abfdcf0101488b4a1f41116d5159d00af8e7 || goto error
-call :downloadfile "shaderc-glslang-%SHADERC_GLSLANG%.zip" "https://github.com/KhronosGroup/glslang/archive/%SHADERC_GLSLANG%.zip" 03ad8a6fa987af4653d0cfe6bdaed41bcf617f1366a151fb1574da75950cd3e8 || goto error
-call :downloadfile "shaderc-spirv-headers-%SHADERC_SPIRVHEADERS%.zip" "https://github.com/KhronosGroup/SPIRV-Headers/archive/%SHADERC_SPIRVHEADERS%.zip" fa59a54334feaba5702b9c25724c3f4746123865769b36dd5a28d9ef5e9d39ab || goto error
-call :downloadfile "shaderc-spirv-tools-%SHADERC_SPIRVTOOLS%.zip" "https://github.com/KhronosGroup/SPIRV-Tools/archive/%SHADERC_SPIRVTOOLS%.zip" bf385994c20293485b378c27dfdbd77a31b949deabccd9218a977f173eda9f6f || goto error
+call :downloadfile "shaderc-%SHADERC%.zip" "https://github.com/google/shaderc/archive/refs/tags/v%SHADERC%.zip" 20630afda226f16ab3e5492ec1f73e420af895b656396692c5d58aa90bccf66a || goto error
+call :downloadfile "shaderc-glslang-%SHADERC_GLSLANG%.zip" "https://github.com/KhronosGroup/glslang/archive/%SHADERC_GLSLANG%.zip" 2d2cb402e2f95350ff487d90854b27664b65fe4b2656d3a8e6d1a3a1d96278d8 || goto error
+call :downloadfile "shaderc-spirv-headers-%SHADERC_SPIRVHEADERS%.zip" "https://github.com/KhronosGroup/SPIRV-Headers/archive/%SHADERC_SPIRVHEADERS%.zip" 21dca5e50660b95e2a3319a241116613f93259fff38855b6ee1f21f31eba9ed1 || goto error
+call :downloadfile "shaderc-spirv-tools-%SHADERC_SPIRVTOOLS%.zip" "https://github.com/KhronosGroup/SPIRV-Tools/archive/%SHADERC_SPIRVTOOLS%.zip" d8a409a603d37c0f23b35c9989815ed8112210a4926d860373641d9b3e20808c || goto error
 
 if %DEBUG%==1 (
   echo Building debug and release libraries...
