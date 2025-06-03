@@ -505,27 +505,6 @@ bool GSHwHack::GSC_ZettaiZetsumeiToshi2(GSRendererHW& r, int& skip)
 	return true;
 }
 
-bool GSHwHack::GSC_SakuraWarsSoLongMyLove(GSRendererHW& r, int& skip)
-{
-	if (skip == 0)
-	{
-		if (RTME == 0 && RFBP != RTBP0 && RTBP0 && RFBMSK == 0x00FFFFFF)
-		{
-			skip = 3; // Remove darkness
-		}
-		else if (RTME == 0 && RFBP == RTBP0 && (RTBP0 == 0x1200 || RTBP0 == 0x1180 || RTBP0 == 0) && RFBMSK == 0x00FFFFFF)
-		{
-			skip = 3; // Remove darkness
-		}
-		else if (RTME && (RFBP == 0 || RFBP == 0x1180) && RFPSM == PSMCT32 && RTBP0 == 0x3F3F && RTPSM == PSMT8)
-		{
-			skip = 1; // Floodlight
-		}
-	}
-
-	return true;
-}
-
 bool GSHwHack::GSC_UltramanFightingEvolution(GSRendererHW& r, int& skip)
 {
 	if (skip == 0)
@@ -1398,7 +1377,6 @@ const GSHwHack::Entry<GSRendererHW::GSC_Ptr> GSHwHack::s_get_skip_count_function
 	CRC_F(GSC_MidnightClub3),
 	CRC_F(GSC_SacredBlaze),
 	CRC_F(GSC_GuitarHero),
-	CRC_F(GSC_SakuraWarsSoLongMyLove),
 	CRC_F(GSC_SFEX3),
 	CRC_F(GSC_DTGames),
 	CRC_F(GSC_TalesOfLegendia),
