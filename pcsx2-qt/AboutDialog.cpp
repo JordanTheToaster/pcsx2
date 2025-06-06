@@ -94,6 +94,11 @@ QString AboutDialog::getWikiUrl()
 	return QString::fromUtf8(PCSX2_WIKI_URL);
 }
 
+QString AboutDialog::getCompatibilityUrl()
+{
+	return QString::fromUtf8(PCSX2_COMPATIBILITY_URL);
+}
+
 QString AboutDialog::getDocumentationUrl()
 {
 	return QString::fromUtf8(PCSX2_DOCUMENTATION_URL);

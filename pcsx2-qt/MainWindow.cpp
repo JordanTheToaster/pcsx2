@@ -369,6 +369,7 @@ void MainWindow::connectSignals()
 	connect(m_ui.actionSupportForums, &QAction::triggered, this, &MainWindow::onSupportForumsActionTriggered);
 	connect(m_ui.actionWiki, &QAction::triggered, this, &MainWindow::onWikiActionTriggered);
 	connect(m_ui.actionDocumentation, &QAction::triggered, this, &MainWindow::onDocumentationActionTriggered);
+	connect(m_ui.actionCompatibility, &QAction::triggered, this, &MainWindow::onCompatibilityActionTriggered);
 	connect(m_ui.actionDiscordServer, &QAction::triggered, this, &MainWindow::onDiscordServerActionTriggered);
 	connect(m_ui.actionAboutQt, &QAction::triggered, qApp, &QApplication::aboutQt);
 	connect(m_ui.actionAbout, &QAction::triggered, this, &MainWindow::onAboutActionTriggered);
@@ -1656,6 +1657,11 @@ void MainWindow::onWikiActionTriggered()
 void MainWindow::onDocumentationActionTriggered()
 {
 	QtUtils::OpenURL(this, AboutDialog::getDocumentationUrl());
+}
+
+void MainWindow::onCompatibilityActionTriggered()
+{
+	QtUtils::OpenURL(this, AboutDialog::getCompatibilityUrl());
 }
 
 void MainWindow::onDiscordServerActionTriggered()
