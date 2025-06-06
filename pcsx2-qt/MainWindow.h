@@ -163,6 +163,7 @@ private Q_SLOTS:
 	void onSupportForumsActionTriggered();
 	void onWikiActionTriggered();
 	void onDocumentationActionTriggered();
+	void onCompatibilityActionTriggered();
 	void onDiscordServerActionTriggered();
 	void onAboutActionTriggered();
 	void onToolsOpenDataDirectoryTriggered();
