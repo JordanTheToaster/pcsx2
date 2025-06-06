@@ -31,7 +31,7 @@
      <x>0</x>
      <y>0</y>
      <width>1050</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSystem">
@@ -85,7 +85,7 @@
     <addaction name="menuLoadState"/>
     <addaction name="menuSaveState"/>
     <addaction name="separator"/>
-    <addaction name="actionSettings"/> <!-- Please consult with macOS users before removing -->
+    <addaction name="actionSettings"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
@@ -119,6 +119,7 @@
     <addaction name="actionSupportForums"/>
     <addaction name="actionWiki"/>
     <addaction name="actionDocumentation"/>
+    <addaction name="actionCompatibility"/>
     <addaction name="actionDiscordServer"/>
     <addaction name="separator"/>
     <addaction name="actionCheckForUpdates"/>
@@ -1054,6 +1055,14 @@
    </property>
    <property name="text">
     <string>Edit &amp;Patches...</string>
+   </property>
+  </action>
+  <action name="actionCompatibility">
+   <property name="icon">
+    <iconset theme="rating-gauge"/>
+   </property>
+   <property name="text">
+    <string>PCSX2 Compatibility Report</string>
    </property>
   </action>
  </widget>

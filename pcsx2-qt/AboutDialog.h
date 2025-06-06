@@ -21,6 +21,7 @@ public:
 	static QString getThirdPartyLicensesUrl();
 	static QString getWikiUrl();
 	static QString getDocumentationUrl();
+	static QString getCompatibilityUrl();
 	static QString getDiscordServerUrl();
 
 	static void showHTMLDialog(QWidget* parent, const QString& title, const QString& url);
