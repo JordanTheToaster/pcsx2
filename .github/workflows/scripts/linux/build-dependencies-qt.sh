@@ -19,7 +19,7 @@ LIBJPEGTURBO=3.1.1
 LIBPNG=1.6.50
 LIBWEBP=1.5.0
 SDL=SDL3-3.2.18
-QT=6.9.1
+QT=6.10.0-beta2
 LZ4=1.10.0
 ZSTD=1.5.7
 KDDOCKWIDGETS=2.2.3
@@ -42,16 +42,16 @@ aadc97ea91f6ef078b0ae3a62bba69e008d9a7db19b34e4ac973b19b71b4217c  libjpeg-turbo-
 1a775bde924397a8e0c08bfda198926c17be859d0288ad0dec1dea1b2ee04f8f  $SDL.tar.gz
 537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b  lz4-$LZ4.tar.gz
 eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3  zstd-$ZSTD.tar.gz
-40caedbf83cc9a1959610830563565889878bc95f115868bbf545d1914acf28e  qtbase-everywhere-src-$QT.tar.xz
-ebe9f238daaf9bb752c7233edadf4af33fc4fa30d914936812b6410d3af1577c  qtimageformats-everywhere-src-$QT.tar.xz
-2dfc5de5fd891ff2afd9861e519bf1a26e6deb729b3133f68a28ba763c9abbd5  qtsvg-everywhere-src-$QT.tar.xz
-90c4a562f4ccfd043fd99f34c600853e0b5ba9babc6ec616c0f306f2ce3f4b4c  qttools-everywhere-src-$QT.tar.xz
-9761a1a555f447cdeba79fdec6a705dee8a7882ac10c12e85f49467ddd01a741  qttranslations-everywhere-src-$QT.tar.xz
-7d21ea0e687180ebb19b9a1f86ae9cfa7a25b4f02d5db05ec834164409932e3e  qtwayland-everywhere-src-$QT.tar.xz
 a8e4a25e5c2686fd36981e527ed05e451fcfc226bddf350f4e76181371190937  shaderc-$SHADERC.tar.gz
 9427deccbdf4bde6a269938df38c6bd75247493786a310d8d733a2c82065ef47  shaderc-glslang-$SHADERC_GLSLANG.tar.gz
 c2225a49c3d7efa5c4f4ce4a6b42081e6ea3daca376f3353d9d7c2722d77a28a  shaderc-spirv-headers-$SHADERC_SPIRVHEADERS.tar.gz
 44d1005880c583fc00a0fb41c839214c68214b000ea8dcb54d352732fee600ff  shaderc-spirv-tools-$SHADERC_SPIRVTOOLS.tar.gz
+28cd9ed1227f4036657a616d88a6531dd6b20de4218833f48b8ee661538019ce  qtbase-everywhere-src-$QT.tar.xz
+58f9864a77fdf5c984cb8be22163ad31a0c71dd378e0b552764504d697cff7fa  qtimageformats-everywhere-src-$QT.tar.xz
+3f30b1b1f77dac56ac4955ca527afc8e1b1a1885003389c7e52c7295479dd835  qtsvg-everywhere-src-$QT.tar.xz
+b8fc7b5e5d7041f847e62ff8a5758e82ee5cd20dc9c13e06ec9adcfef63852d2  qttools-everywhere-src-$QT.tar.xz
+3d5a18f1caa7ca34b2ba407ef9b3334b2901bb513a456a779a0840d3cef547a3  qttranslations-everywhere-src-$QT.tar.xz
+af791fbea6d6830d652d36d4bd02c91176dc9a91afe0780265ff4acd69ccd8ce  qtwayland-everywhere-src-$QT.tar.xz
 b8529755b2d54205341766ae168e83177c6120660539f9afba71af6bca4b81ec  KDDockWidgets-$KDDOCKWIDGETS.tar.gz
 8aa9860519c407890668c29998e8bb88896ef6a2e6d7ce5ac1e57f18d79e1525  plutovg-$PLUTOVG.tar.gz
 78561b571ac224030cdc450ca2986b4de915c2ba7616004a6d71a379bffd15f3  plutosvg-$PLUTOSVG.tar.gz
@@ -65,12 +65,12 @@ curl -L \
 	-O "https://github.com/lz4/lz4/releases/download/v$LZ4/lz4-$LZ4.tar.gz" \
 	-O "https://libsdl.org/release/$SDL.tar.gz" \
 	-O "https://github.com/facebook/zstd/releases/download/v$ZSTD/zstd-$ZSTD.tar.gz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtwayland-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtwayland-everywhere-src-$QT.tar.xz" \
 	-o "shaderc-$SHADERC.tar.gz" "https://github.com/google/shaderc/archive/refs/tags/v$SHADERC.tar.gz" \
 	-o "shaderc-glslang-$SHADERC_GLSLANG.tar.gz" "https://github.com/KhronosGroup/glslang/archive/$SHADERC_GLSLANG.tar.gz" \
 	-o "shaderc-spirv-headers-$SHADERC_SPIRVHEADERS.tar.gz" "https://github.com/KhronosGroup/SPIRV-Headers/archive/$SHADERC_SPIRVHEADERS.tar.gz" \
