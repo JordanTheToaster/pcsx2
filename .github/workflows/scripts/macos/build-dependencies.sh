@@ -341,6 +341,7 @@ rm -fr "KDDockWidgets-$KDDOCKWIDGETS"
 tar xf "KDDockWidgets-$KDDOCKWIDGETS.tar.gz"
 cd "KDDockWidgets-$KDDOCKWIDGETS"
 patch -p1 < "$SCRIPTDIR/../common/kddockwidgets-dodgy-include.patch"
+patch -p1 < "$SCRIPTDIR/../common/kddockwidgets-qt610-build-fix.patch"
 cmake "${CMAKE_COMMON[@]}" -DKDDockWidgets_QT6=true -DKDDockWidgets_EXAMPLES=false -DKDDockWidgets_FRONTENDS=qtwidgets -B build
 make -C build "-j$NPROCS"
 make -C build install
