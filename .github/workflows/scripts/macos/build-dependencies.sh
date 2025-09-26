@@ -11,7 +11,7 @@ fi
 # Users may want to use system ffmpeg for additional features
 : ${BUILD_FFMPEG:=1}
 
-export MACOSX_DEPLOYMENT_TARGET=11.0
+export MACOSX_DEPLOYMENT_TARGET=12.0
 
 NPROCS="$(getconf _NPROCESSORS_ONLN)"
 SCRIPTDIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
@@ -30,7 +30,7 @@ LIBJPEGTURBO=3.1.2
 LIBWEBP=1.6.0
 FFMPEG=6.0
 MOLTENVK=1.2.9
-QT=6.7.3
+QT=6.9.2
 QTAPNG=1.3.0
 KDDOCKWIDGETS=2.3.0
 PLUTOVG=1.3.1
@@ -55,6 +55,7 @@ CMAKE_COMMON=(
 	-DCMAKE_INSTALL_PREFIX="$INSTALLDIR"
 	-DCMAKE_OSX_ARCHITECTURES="x86_64"
 	-DCMAKE_INSTALL_NAME_DIR='$<INSTALL_PREFIX>/lib'
+	-DQT_GENERATE_SBOM=OFF
 )
 
 cat > SHASUMS <<EOF
@@ -69,11 +70,11 @@ e4ab7009bf0629fd11982d4c2aa83964cf244cffba7347ecd39019a9e38c4564  libwebp-$LIBWE
 8f0012234b464ce50890c490f18194f913a7b1f4e6a03d6644179fa0f867d0cf  libjpeg-turbo-$LIBJPEGTURBO.tar.gz
 57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082  ffmpeg-$FFMPEG.tar.xz
 f415a09385030c6510a936155ce211f617c31506db5fbc563e804345f1ecf56e  v$MOLTENVK.tar.gz
-8ccbb9ab055205ac76632c9eeddd1ed6fc66936fc56afc2ed0fd5d9e23da3097  qtbase-everywhere-src-$QT.tar.xz
-9fd58144081654c3373768dd96ead294023830927b14fe3d3c1ef641fb324753  qtimageformats-everywhere-src-$QT.tar.xz
-40142cb71fb1e07ad612bc361b67f5d54cd9367f9979ae6b86124a064deda06b  qtsvg-everywhere-src-$QT.tar.xz
-f03bb7df619cd9ac9dba110e30b7bcab5dd88eb8bdc9cc752563b4367233203f  qttools-everywhere-src-$QT.tar.xz
-dcc762acac043b9bb5e4d369b6d6f53e0ecfcf76a408fe0db5f7ef071c9d6dc8  qttranslations-everywhere-src-$QT.tar.xz
+44be9c9ecfe04129c4dea0a7e1b36ad476c9cc07c292016ac98e7b41514f2440  qtbase-everywhere-src-$QT.tar.xz
+8a023f7e2f57dedc02e2ab10c975f7cb3cccac9b8f0823c12fd6824834549139  qtimageformats-everywhere-src-$QT.tar.xz
+d984cab8f26334aa1c15e5b8f0cd9f1b7c0c1289fe0b68c1c84ab469b75605a5  qtsvg-everywhere-src-$QT.tar.xz
+d8b7f7e8e970cc0b975205fd6d5832ea917ef3e751df69b97439c1cddd67a489  qttools-everywhere-src-$QT.tar.xz
+c73bb6281ed365c0f954f4b1b6e1b13e1b3fefd94854f46fcd9a412f641f7ed6  qttranslations-everywhere-src-$QT.tar.xz
 f1d3be3489f758efe1a8f12118a212febbe611aa670af32e0159fa3c1feab2a6  QtApng-$QTAPNG.tar.gz
 a8e4a25e5c2686fd36981e527ed05e451fcfc226bddf350f4e76181371190937  shaderc-$SHADERC.tar.gz
 9427deccbdf4bde6a269938df38c6bd75247493786a310d8d733a2c82065ef47  shaderc-glslang-$SHADERC_GLSLANG.tar.gz
@@ -96,11 +97,11 @@ curl -L \
 	-O "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-$LIBWEBP.tar.gz" \
 	-O "https://ffmpeg.org/releases/ffmpeg-$FFMPEG.tar.xz" \
 	-O "https://github.com/KhronosGroup/MoltenVK/archive/refs/tags/v$MOLTENVK.tar.gz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
 	-o "QtApng-$QTAPNG.tar.gz" "https://github.com/jurplel/QtApng/archive/refs/tags/$QTAPNG.tar.gz" \
 	-o "shaderc-$SHADERC.tar.gz" "https://github.com/google/shaderc/archive/refs/tags/v$SHADERC.tar.gz" \
 	-o "shaderc-glslang-$SHADERC_GLSLANG.tar.gz" "https://github.com/KhronosGroup/glslang/archive/$SHADERC_GLSLANG.tar.gz" \
@@ -237,22 +238,9 @@ cd "qtbase-everywhere-src-$QT"
 # (only indirectly from iconengines), and the libqsvg.dylib imageformat plugin does not get deployed.
 # We could run macdeployqt twice, but that's even more janky than patching it.
 
-# https://github.com/qt/qtbase/commit/7b018629c3c3ab23665bf1da00c43c1546042035
-# The QProcess default wait time of 30s may be too short in e.g. CI environments where processes may be blocked
-# for a longer time waiting for CPU or IO.
-
 patch -u src/tools/macdeployqt/shared/shared.cpp <<EOF
 --- shared.cpp
 +++ shared.cpp
-@@ -152,7 +152,7 @@
-     LogDebug() << " inspecting" << binaryPath;
-     QProcess otool;
-     otool.start("otool", QStringList() << "-L" << binaryPath);
--    otool.waitForFinished();
-+    otool.waitForFinished(-1);
- 
-     if (otool.exitStatus() != QProcess::NormalExit || otool.exitCode() != 0) {
-         LogError() << otool.readAllStandardError();
 @@ -1122,14 +1122,8 @@
          addPlugins(QStringLiteral("networkinformation"));
      }
