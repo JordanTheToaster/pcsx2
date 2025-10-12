@@ -29,7 +29,7 @@ fi
 # Users may want to use system ffmpeg for additional features
 : ${BUILD_FFMPEG:=1}
 
-export MACOSX_DEPLOYMENT_TARGET=11.0
+export MACOSX_DEPLOYMENT_TARGET=13.0
 
 NPROCS="$(getconf _NPROCESSORS_ONLN)"
 SCRIPTDIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
