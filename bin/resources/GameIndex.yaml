@@ -13928,9 +13928,10 @@ SLED-53066:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-E"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLED-53083:
   name: "Monster Hunter [Demo]"
   region: "PAL-M5"
@@ -21974,9 +21975,10 @@ SLES-52993:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-M5"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLES-52998:
   name: "Sonic Mega Collection Plus"
   region: "PAL-M5"
@@ -69741,9 +69743,10 @@ SLUS-21148:
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLUS-21149:
   name: "Yourself! Fitness"
   region: "NTSC-U"
