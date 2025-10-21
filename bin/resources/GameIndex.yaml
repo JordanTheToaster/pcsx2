@@ -147,6 +147,15 @@ FVGK-0015:
   name-sort: "はくしゃくとようせい ゆめときずなにおもいをはせて [しょかいげんていばん]"
   name-en: "Hakushaku to Yousei - Yume to Kizuna ni Omoi o Hasete [First Limited Edition]"
   region: "NTSC-J"
+GUST-00003:
+  name: "イリスのアトリエ エターナルマナ"
+  name-sort: "いりすのあとりえ えたーなるまな"
+  name-en: "Iris no Atelier - Eternal Mana [Premium Box]"
+  region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 GUST-00009:
   name: "マナケミア ～学園の錬金術師たち～ [プレミアムボックス]"
   name-sort: "まなけみあ がくえんのれんきんじゅつしたち [ぷれみあむぼっくす]"
@@ -3881,6 +3890,7 @@ SCED-52759:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -3914,6 +3924,7 @@ SCED-52846:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -5553,6 +5564,7 @@ SCES-52004:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -5892,6 +5904,7 @@ SCES-52893:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -7501,6 +7514,7 @@ SCKA-20048:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -7764,6 +7778,7 @@ SCKA-20078:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12074,6 +12089,7 @@ SCUS-97402:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12216,6 +12232,7 @@ SCUS-97431:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12226,6 +12243,7 @@ SCUS-97432:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12680,6 +12698,7 @@ SCUS-97517:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -13914,6 +13933,7 @@ SLED-52899:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -13935,9 +13955,10 @@ SLED-53066:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-E"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLED-53083:
   name: "Monster Hunter [Demo]"
   region: "PAL-M5"
@@ -14770,9 +14791,11 @@ SLES-50182:
   gsHWFixes:
     roundSprite: 1 # Fixes font artifacts.
 SLES-50183:
-  name: "Wacky Races"
-  region: "PAL-M5"
+  name: "Wacky Races Starring Dastardly & Muttley"
+  region: "PAL-M6"
   compat: 5
+  gsHWFixes:
+    PCRTCOverscan: 1 # Fixes interlace wobble.
 SLES-50185:
   name: "Alone in the Dark - The New Nightmare"
   region: "PAL-M5"
@@ -16188,8 +16211,11 @@ SLES-50808:
   gsHWFixes:
     roundSprite: 1 # Fixes lines in HUD and text boxes.
 SLES-50809:
-  name: "Next Generation Tennis"
+  name: "NGT - Next Generation Tennis"
   region: "PAL-M6"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
+    PCRTCOverscan: 1 # Fixes image alignment.
 SLES-50812:
   name: "Spider-Man"
   region: "PAL-E"
@@ -16466,12 +16492,14 @@ SLES-50876:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLES-50877:
   name: "TimeSplitters 2"
   region: "PAL-M5"
@@ -17845,7 +17873,7 @@ SLES-51434:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLES-51434"
@@ -19579,12 +19607,14 @@ SLES-52153:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLES-52155:
   name: "EyeToy - L'Eredita"
   region: "PAL-I"
@@ -20513,6 +20543,7 @@ SLES-52541:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLES-52542:
   name: "All Music Dance!"
   region: "PAL-I"
@@ -21767,6 +21798,7 @@ SLES-52927:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLES-52931:
   name: "Legend of Kay"
   region: "PAL-M5"
@@ -21981,9 +22013,10 @@ SLES-52993:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-M5"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLES-52998:
   name: "Sonic Mega Collection Plus"
   region: "PAL-M5"
@@ -24495,7 +24528,9 @@ SLES-53753:
   gameFixes:
     - VIFFIFOHack # Needed to load the main game properly.
   gsHWFixes:
+    recommendedBlendingLevel: 4 # Fixes road reflections and glare flickering in sunlight.
     halfPixelOffset: 4 # Fixes bloom misalignment.
+    nativeScaling: 2 # Aligns bloom positioning.
 SLES-53754:
   name: "ATV Offroad Fury 3"
   region: "PAL-M6"
@@ -24550,6 +24585,10 @@ SLES-53763:
 SLES-53764:
   name: "Atelier Iris - Eternal Mana"
   region: "PAL-E"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLES-53765:
   name: "Stella Deus - The Gate of Eternity"
   region: "PAL-E"
@@ -25675,6 +25714,8 @@ SLES-54171:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLES-54172:
@@ -26222,6 +26263,11 @@ SLES-54344:
 SLES-54346:
   name: "Heatseeker"
   region: "PAL-M3"
+  gsHWFixes:
+    halfPixelOffset: 5 # Fixes misaligment issues.
+    nativeScaling: 2 # Fixes post effects such as the afterburners.
+    gpuTargetCLUT: 1 # Fixes lens flares going through objects.
+    bilinearUpscale: 2 # Smooths out sun glare textures.
 SLES-54347:
   name: "The Sims 2 - Pets"
   name-sort: "Sims 2, The - Pets"
@@ -26693,7 +26739,9 @@ SLES-54466:
   gameFixes:
     - VIFFIFOHack # Needed to load the main game properly.
   gsHWFixes:
+    recommendedBlendingLevel: 4 # Fixes road reflections and glare flickering in sunlight.
     halfPixelOffset: 4 # Fixes bloom misalignment.
+    nativeScaling: 2 # Aligns bloom positioning.
   patches:
     C2911A79:
       content: |-
@@ -27094,6 +27142,11 @@ SLES-54593:
 SLES-54596:
   name: "Heatseeker"
   region: "PAL-M3"
+  gsHWFixes:
+    halfPixelOffset: 5 # Fixes misaligment issues.
+    nativeScaling: 2 # Fixes post effects such as the afterburners.
+    gpuTargetCLUT: 1 # Fixes lens flares going through objects.
+    bilinearUpscale: 2 # Smooths out sun glare textures.
 SLES-54604:
   name: "¡Qué pasa Neng! El videojuego"
   region: "PAL-S"
@@ -28183,7 +28236,7 @@ SLES-54945:
   compat: 5
   gsHWFixes:
     halfPixelOffset: 5 # Aligns post effects.
-    nativeScaling: 2 # Fixes post-processing and lighting smoothness and position.
+    nativeScaling: 4 # Fixes post-processing and lighting smoothness and position.
     beforeDraw: "OI_DBZBTGames"
 SLES-54946:
   name: "Sega Superstars Tennis"
@@ -29289,6 +29342,8 @@ SLES-55242:
   name: "Yakuza 2"
   region: "PAL-E"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters: # Allows import of Yakuza 1 data.
@@ -31259,7 +31314,7 @@ SLKA-25065:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
 SLKA-25066:
   name: "Zone of the Enders - The 2nd Runner SE" # No listed Korean name on ReDump
@@ -31852,12 +31907,14 @@ SLKA-25196:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLKA-25198:
   name: "천주 홍" # Undumped on ReDump as of 2025-08-28
   name-en: "Tenchu Kurenai"
@@ -32327,7 +32384,10 @@ SLKA-25280:
   name-en: "Ryu ga Gotoku 2 [Disc 1 of 2]"
   region: "NTSC-K"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLKA-25280"
     - "SLKA-25342"
@@ -32336,7 +32396,10 @@ SLKA-25281:
   name-en: "Ryu ga Gotoku 2 [Disc 2 of 2]"
   region: "NTSC-K"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLKA-25280"
     - "SLKA-25342"
@@ -32704,7 +32767,10 @@ SLKA-25342:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLKA-25343:
   name: "스릴빌 - 오프 더 레일"
   name-en: "Thrillville - Off the Rails"
@@ -33044,7 +33110,7 @@ SLKA-25407:
   compat: 5
   gsHWFixes:
     halfPixelOffset: 5 # Aligns post effects.
-    nativeScaling: 2 # Fixes post-processing and lighting smoothness and position.
+    nativeScaling: 4 # Fixes post-processing and lighting smoothness and position.
     beforeDraw: "OI_DBZBTGames"
 SLKA-25408:
   name: "피파 08"
@@ -34025,6 +34091,7 @@ SLPM-55092:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLPM-55093:
   name: "ギャラクシーエンジェルⅡ 無限回廊の鍵 [ディスク1/2]"
   name-sort: "ぎゃらくしーえんじぇる2 むげんかいろうのかぎ [でぃすく1/2]"
@@ -35006,6 +35073,7 @@ SLPM-55292:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLPM-55293:
   name: "グランド・セフト・オートⅢ [ROCKSTAR CLASSICS]"
   name-sort: "ぐらんど・せふと・おーと3 [ROCKSTAR CLASSICS]"
@@ -36342,12 +36410,14 @@ SLPM-61092:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLPM-61093:
   name: "ウルトラマン Fighting Evolution 3 [体験版]"
   name-sort: "うるとらまん Fighting Evolution 3 [たいけんばん]"
@@ -36657,7 +36727,10 @@ SLPM-61140:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-61141:
   name: "電撃PS2 / 電撃PlayStation D87"
   name-sort: "でんげき PS2 でんげきPlayStation D87"
@@ -36727,6 +36800,11 @@ SLPM-61154:
   name-sort: "りゅうがごとく2 [たいけんばん]"
   name-en: "Ryu Ga Gotoku 2 [Trial]"
   region: "NTSC-J"
+  gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
+    alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-61155:
   name: "トゥームレイダー レジェンド [体験版]"
   name-sort: "とぅーむれいだー れじぇんど [たいけんばん]"
@@ -38153,6 +38231,8 @@ SLPM-62281:
   name-sort: "US おーぷん 2002 - A USTA いべんと"
   name-en: "US Open 2002 - A USTA Event"
   region: "NTSC-J"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
 SLPM-62282:
   name: "SILENT SCOPE2 INNOCENT SWEEPER [KONAMI The BEST]"
   name-sort: "さいれんと すこーぷ 2 いのせんと すいーぱー [KONAMI The BEST]"
@@ -38343,7 +38423,7 @@ SLPM-62320:
 SLPM-62321:
   name: "ロボコップ～新たなる危機～"
   name-sort: "ろぼこっぷ あらたなるきき"
-  name-en: "Robocop"
+  name-en: "RoboCop - Aratanaru Kiki"
   region: "NTSC-J"
   gsHWFixes:
     recommendedBlendingLevel: 4 # Improves effect rendering.
@@ -39168,6 +39248,8 @@ SLPM-62478:
   name-sort: "ぼんばーまんらんどしりーず ぼんばーまんかーとDX"
   name-en: "Bomberman Kart DX"
   region: "NTSC-J"
+  clampModes:
+    vu0ClampMode: 3 # Fixes specific level infinite load screen.
 SLPM-62479:
   name: "カラオケレボリューション J-POPベストVol.9"
   name-sort: "からおけれぼりゅーしょん J-POPべすとVol.9"
@@ -39807,8 +39889,10 @@ SLPM-62598:
 SLPM-62599:
   name: "ボンバーマンカートDX [HUDSON THE BEST]"
   name-sort: "ぼんばーまんかーとDX [HUDSON THE BEST]"
-  name-en: "Bomberman Kart DX"
+  name-en: "Bomberman Kart DX [Hudson the Best]"
   region: "NTSC-J"
+  clampModes:
+    vu0ClampMode: 3 # Fixes specific level infinite load screen.
 SLPM-62600:
   name: "SIMPLE2000シリーズ Vol.75 THE 特ダネ ～日本全国スクープ列島～"
   name-sort: "しんぷる2000しりーず Vol.  75 THE とくだね にほんぜんこくすくーぷれっとう"
@@ -42411,7 +42495,7 @@ SLPM-65257:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -44298,6 +44382,10 @@ SLPM-65594:
   name-sort: "いりすのあとりえ えたーなるまな"
   name-en: "Iris no Atelier - Eternal Mana"
   region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLPM-65595:
   name: "勝負師伝説 哲也2 玄人頂上決戦 [Athena Best Collection Vol.1]"
   name-sort: "ぎゃんぶらーでんせつ てつや2 くろうとちょうじょうけっせん [Athena Best Collection Vol.1]"
@@ -44462,7 +44550,7 @@ SLPM-65622:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -45158,12 +45246,14 @@ SLPM-65741:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLPM-65742:
   name: "COOL GIRL [KONAMI The BEST] [ディスク1/2]"
   name-sort: "くーる がーる [KONAMI The BEST] [でぃすく1/2]"
@@ -46580,6 +46670,7 @@ SLPM-65984:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLPM-65985:
   name: "イリスのアトリエ エターナルマナ2"
   name-sort: "いりすのあとりえ えたーなるまな2"
@@ -46780,7 +46871,7 @@ SLPM-66018:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -47169,6 +47260,10 @@ SLPM-66081:
   name-sort: "いりすのあとりえ えたーなるまな Gust Best Price"
   name-en: "Iris no Atelier - Eternal Mana [Gust Best Price]"
   region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLPM-66082:
   name: "ファイプロ・リターンズ"
   name-sort: "ふぁいぷろ りたーんず"
@@ -47654,6 +47749,7 @@ SLPM-66151:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -47758,7 +47854,10 @@ SLPM-66168:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-66169:
   name: "Jリーグ ウイニングイレブン9 アジアチャンピオンシップ"
   name-sort: "Jりーぐ ういにんぐいれぶん 9 あじあちゃんぴおんしっぷ"
@@ -50515,7 +50614,10 @@ SLPM-66602:
   name-en: "Ryu ga Gotoku 2"
   region: "NTSC-J"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLPM-66602"
     - "SLPM-74301"
@@ -50528,7 +50630,10 @@ SLPM-66603:
   name-en: "Ryu ga Gotoku 2 [with Trailer DVD]"
   region: "NTSC-J"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLPM-66602"
     - "SLPM-74301"
@@ -51704,6 +51809,7 @@ SLPM-66788:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLPM-66789:
   name: "グランド・セフト・オートⅢ [Best Price]"
   name-sort: "ぐらんど・せふと・おーと3 [Best Price]"
@@ -53758,7 +53864,10 @@ SLPM-74234:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-74235:
   name: "戦国無双 [PlayStation2 the Best]"
   name-sort: "せんごくむそう [PlayStation2 the Best]"
@@ -53921,7 +54030,10 @@ SLPM-74253:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-74254:
   name: "EX人生ゲームⅡ [PlayStation2 the Best]"
   name-sort: "EXじんせいげーむ2 [PlayStation2 the Best]"
@@ -54039,7 +54151,10 @@ SLPM-74269:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLPM-74270:
   name: "Fate/stay night[Realta Nua] [PlayStation2 the Best]"
   name-sort: "ふぇいと すていないと れあるたぬあ [PlayStation2 the Best]"
@@ -54126,7 +54241,10 @@ SLPM-74301:
   name-en: "Ryu ga Gotoku 2 [with Trailer DVD] [PlayStation 2 the Best - Reprint]"
   region: "NTSC-J"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLPM-66602"
     - "SLPM-74301"
@@ -54139,7 +54257,10 @@ SLPM-74302:
   name-en: "Ryu ga Gotoku 2 [PlayStation 2 the Best - Reprint]"
   region: "NTSC-J"
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
+    nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters:
     - "SLPM-66602"
     - "SLPM-74301"
@@ -61765,7 +61886,7 @@ SLPS-25815:
   region: "NTSC-J"
   gsHWFixes:
     halfPixelOffset: 5 # Aligns post effects.
-    nativeScaling: 2 # Fixes post-processing and lighting smoothness and position.
+    nativeScaling: 4 # Fixes post-processing and lighting smoothness and position.
     beforeDraw: "OI_DBZBTGames"
 SLPS-25816:
   name: "山佐DigiワールドコラボレーションSP パチスロ リッジレーサー"
@@ -66573,12 +66694,14 @@ SLUS-20587:
   gameFixes:
     - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Fixes intense sun color banding.
     autoFlush: 1 # Aligns and corrects shadows.
     halfPixelOffset: 5 # Fixes sun and depth line.
     textureInsideRT: 1 # Fixes car textures.
     cpuSpriteRenderBW: 4 # Alleviates text and sky rendering issues.
     cpuSpriteRenderLevel: 2 # Needed for above.
     nativePaletteDraw: 1 # Fixes broken menu graphics.
+    nativeScaling: 2 # Fixes sun occlusion around buildings.
 SLUS-20588:
   name: "Activision Anthology"
   region: "NTSC-U"
@@ -66746,7 +66869,7 @@ SLUS-20622:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters: # Reads Silent Hill 2 for easter egg.
     - "SLUS-20622"
@@ -68564,6 +68687,7 @@ SLUS-20946:
     recommendedBlendingLevel: 2 # Fixes blocky heat haze effect.
     halfPixelOffset: 5 # Helps align radiosity closer to native.
     autoFlush: 1 # Fixes post-processing.
+    nativeScaling: 4 # Fixes misaligned bloom.
 SLUS-20947:
   name: "WinBack 2 - Project Poseidon"
   region: "NTSC-U"
@@ -69613,7 +69737,7 @@ SLUS-21113:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
   gsHWFixes:
-    roundSprite: 2 # Fixes character portraits when upscaling and reduces lines in FMVs when using HW renderer.
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLUS-21114:
   name: "NHRA Championship Drag Racing"
   region: "NTSC-U"
@@ -69800,9 +69924,10 @@ SLUS-21148:
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLUS-21149:
   name: "Yourself! Fitness"
   region: "NTSC-U"
@@ -71214,6 +71339,8 @@ SLUS-21348:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLUS-21349:
@@ -72185,7 +72312,9 @@ SLUS-21490:
   gameFixes:
     - VIFFIFOHack # Needed to load the main game properly.
   gsHWFixes:
+    recommendedBlendingLevel: 4 # Fixes road reflections and glare flickering in sunlight.
     halfPixelOffset: 4 # Fixes bloom misalignment.
+    nativeScaling: 2 # Aligns bloom positioning.
 SLUS-21491:
   name: "World Series of Poker - Tournament of Champions"
   region: "NTSC-U"
@@ -72463,6 +72592,11 @@ SLUS-21570:
   name: "Heatseeker"
   region: "NTSC-U"
   compat: 5
+  gsHWFixes:
+    halfPixelOffset: 5 # Fixes misaligment issues.
+    nativeScaling: 2 # Fixes post effects such as the afterburners.
+    gpuTargetCLUT: 1 # Fixes lens flares going through objects.
+    bilinearUpscale: 2 # Smooths out sun glare textures.
 SLUS-21571:
   name: "Growlanser - Heritage of War"
   region: "NTSC-U"
@@ -73135,7 +73269,7 @@ SLUS-21678:
   compat: 5
   gsHWFixes:
     halfPixelOffset: 5 # Aligns post effects.
-    nativeScaling: 2 # Fixes post-processing and lighting smoothness and position.
+    nativeScaling: 4 # Fixes post-processing and lighting smoothness and position.
     beforeDraw: "OI_DBZBTGames"
 SLUS-21679:
   name: "Power Rangers - Super Legends"
@@ -73647,6 +73781,8 @@ SLUS-21769:
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post-processing and lighting smoothness.
   memcardFilters: # Allows import of Yakuza 1 data.
@@ -75560,7 +75696,9 @@ SLUS-29192:
   gameFixes:
     - VIFFIFOHack # Needed to load the main game properly.
   gsHWFixes:
+    recommendedBlendingLevel: 4 # Fixes road reflections and glare flickering in sunlight.
     halfPixelOffset: 4 # Fixes bloom misalignment.
+    nativeScaling: 2 # Aligns bloom positioning.
 SLUS-29193:
   name: "Need for Speed - Carbon [Demo]"
   region: "NTSC-U"
@@ -75582,6 +75720,8 @@ SLUS-29195:
   gameFixes:
     - EETimingHack # Fixes flickering.
   gsHWFixes:
+    minimumBlendingLevel: 2 # Improves brightness and banding.
+    recommendedBlendingLevel: 4 # Fixes road signs street furniture color and glass transparancy.
     alignSprite: 1 # Helps align bloom.
     nativeScaling: 2 # Fixes post-processing and lighting smoothness.
 SLUS-29196:
@@ -75647,6 +75787,7 @@ TCES-52004:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -75726,6 +75867,13 @@ TCPS-10058:
   name-sort: "でんしゃでごーしんかんせん さんようしんかんせんへん うんてんしせっと [PlayStation2 the Best]"
   name-en: "Densha de Go! Shinkansen Sanyou Shinkansen-hen [with Controller]"
   region: "NTSC-J"
+TCPS-10060:
+  name: "US OPEN 2002 - A USTA EVENT"
+  name-sort: "US おーぷん 2002 - A USTA いべんと"
+  name-en: "US Open 2002 - A USTA Event"
+  region: "NTSC-J"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
 TCPS-10068:
   name: "電車でGO！ 旅情編 [コントローラ同梱セット]"
   name-sort: "でんしゃでごー りょじょうへん [こんとろーらどうこんせっと]"
