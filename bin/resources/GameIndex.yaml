@@ -147,6 +147,15 @@ FVGK-0015:
   name-sort: "はくしゃくとようせい ゆめときずなにおもいをはせて [しょかいげんていばん]"
   name-en: "Hakushaku to Yousei - Yume to Kizuna ni Omoi o Hasete [First Limited Edition]"
   region: "NTSC-J"
+GUST-00003:
+  name: "イリスのアトリエ エターナルマナ"
+  name-sort: "いりすのあとりえ えたーなるまな"
+  name-en: "Iris no Atelier - Eternal Mana [Premium Box]"
+  region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 GUST-00009:
   name: "マナケミア ～学園の錬金術師たち～ [プレミアムボックス]"
   name-sort: "まなけみあ がくえんのれんきんじゅつしたち [ぷれみあむぼっくす]"
@@ -3874,6 +3883,7 @@ SCED-52759:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -3907,6 +3917,7 @@ SCED-52846:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -5546,6 +5557,7 @@ SCES-52004:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -5885,6 +5897,7 @@ SCES-52893:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -7494,6 +7507,7 @@ SCKA-20048:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -7754,6 +7768,7 @@ SCKA-20078:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12064,6 +12079,7 @@ SCUS-97402:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12206,6 +12222,7 @@ SCUS-97431:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12216,6 +12233,7 @@ SCUS-97432:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -12670,6 +12688,7 @@ SCUS-97517:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -13904,6 +13923,7 @@ SLED-52899:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -13925,9 +13945,10 @@ SLED-53066:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-E"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLED-53083:
   name: "Monster Hunter [Demo]"
   region: "PAL-M5"
@@ -16178,8 +16199,11 @@ SLES-50808:
   gsHWFixes:
     roundSprite: 1 # Fixes lines in HUD and text boxes.
 SLES-50809:
-  name: "Next Generation Tennis"
+  name: "NGT - Next Generation Tennis"
   region: "PAL-M6"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
+    PCRTCOverscan: 1 # Fixes image alignment.
 SLES-50812:
   name: "Spider-Man"
   region: "PAL-E"
@@ -17835,7 +17859,7 @@ SLES-51434:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLES-51434"
@@ -21971,9 +21995,10 @@ SLES-52993:
   name: "TimeSplitters - Future Perfect"
   region: "PAL-M5"
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLES-52998:
   name: "Sonic Mega Collection Plus"
   region: "PAL-M5"
@@ -24540,6 +24565,10 @@ SLES-53763:
 SLES-53764:
   name: "Atelier Iris - Eternal Mana"
   region: "PAL-E"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLES-53765:
   name: "Stella Deus - The Gate of Eternity"
   region: "PAL-E"
@@ -31238,7 +31267,7 @@ SLKA-25065:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
 SLKA-25066:
   name: "Zone of the Enders - The 2nd Runner SE" # No listed Korean name on ReDump
@@ -38113,6 +38142,8 @@ SLPM-62281:
   name-sort: "US おーぷん 2002 - A USTA いべんと"
   name-en: "US Open 2002 - A USTA Event"
   region: "NTSC-J"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
 SLPM-62282:
   name: "SILENT SCOPE2 INNOCENT SWEEPER [KONAMI The BEST]"
   name-sort: "さいれんと すこーぷ 2 いのせんと すいーぱー [KONAMI The BEST]"
@@ -38303,7 +38334,7 @@ SLPM-62320:
 SLPM-62321:
   name: "ロボコップ～新たなる危機～"
   name-sort: "ろぼこっぷ あらたなるきき"
-  name-en: "Robocop"
+  name-en: "RoboCop - Aratanaru Kiki"
   region: "NTSC-J"
   gsHWFixes:
     recommendedBlendingLevel: 4 # Improves effect rendering.
@@ -39128,6 +39159,8 @@ SLPM-62478:
   name-sort: "ぼんばーまんらんどしりーず ぼんばーまんかーとDX"
   name-en: "Bomberman Kart DX"
   region: "NTSC-J"
+  clampModes:
+    vu0ClampMode: 3 # Fixes specific level infinite load screen.
 SLPM-62479:
   name: "カラオケレボリューション J-POPベストVol.9"
   name-sort: "からおけれぼりゅーしょん J-POPべすとVol.9"
@@ -39767,8 +39800,10 @@ SLPM-62598:
 SLPM-62599:
   name: "ボンバーマンカートDX [HUDSON THE BEST]"
   name-sort: "ぼんばーまんかーとDX [HUDSON THE BEST]"
-  name-en: "Bomberman Kart DX"
+  name-en: "Bomberman Kart DX [Hudson the Best]"
   region: "NTSC-J"
+  clampModes:
+    vu0ClampMode: 3 # Fixes specific level infinite load screen.
 SLPM-62600:
   name: "SIMPLE2000シリーズ Vol.75 THE 特ダネ ～日本全国スクープ列島～"
   name-sort: "しんぷる2000しりーず Vol.  75 THE とくだね にほんぜんこくすくーぷれっとう"
@@ -42371,7 +42406,7 @@ SLPM-65257:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -44258,6 +44293,10 @@ SLPM-65594:
   name-sort: "いりすのあとりえ えたーなるまな"
   name-en: "Iris no Atelier - Eternal Mana"
   region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLPM-65595:
   name: "勝負師伝説 哲也2 玄人頂上決戦 [Athena Best Collection Vol.1]"
   name-sort: "ぎゃんぶらーでんせつ てつや2 くろうとちょうじょうけっせん [Athena Best Collection Vol.1]"
@@ -44422,7 +44461,7 @@ SLPM-65622:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -46740,7 +46779,7 @@ SLPM-66018:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters:
     - "SLPM-65257"
@@ -47129,6 +47168,10 @@ SLPM-66081:
   name-sort: "いりすのあとりえ えたーなるまな Gust Best Price"
   name-en: "Iris no Atelier - Eternal Mana [Gust Best Price]"
   region: "NTSC-J"
+  gameFixes:
+    - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
+  gsHWFixes:
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLPM-66082:
   name: "ファイプロ・リターンズ"
   name-sort: "ふぁいぷろ りたーんず"
@@ -47614,6 +47657,7 @@ SLPM-66151:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -66662,7 +66706,7 @@ SLUS-20622:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes blackscreen when FMV.
   gsHWFixes:
-    recommendedBlendingLevel: 4 # Fixes menu transparancy effects and text.
+    minimumBlendingLevel: 4 # Fixes brightness menu transparancy effects and text.
     deinterlace: 9 # Fixes incorrect field order in FMVs.
   memcardFilters: # Reads Silent Hill 2 for easter egg.
     - "SLUS-20622"
@@ -69529,7 +69573,7 @@ SLUS-21113:
   gameFixes:
     - SoftwareRendererFMVHack # Fixes horizontal lines in FMV and prevents hash cache from disabling itself.
   gsHWFixes:
-    roundSprite: 2 # Fixes character portraits when upscaling and reduces lines in FMVs when using HW renderer.
+    roundSprite: 2 # Fixes character portraits when upscaling.
 SLUS-21114:
   name: "NHRA Championship Drag Racing"
   region: "NTSC-U"
@@ -69716,9 +69760,10 @@ SLUS-21148:
   region: "NTSC-U"
   compat: 5
   gsHWFixes:
-    halfPixelOffset: 3 # Removes ghosting of distant objects.
+    recommendedBlendingLevel: 5 # Fixes incorrect loading screen color.
+    halfPixelOffset: 5 # Aligns bloom of distant objects.
+    nativeScaling: 2 # Fixes post effect alignment and blocky bloom.
     autoFlush: 2 # Fixes HUD blending.
-    nativeScaling: 1 # Fixes post effects.
 SLUS-21149:
   name: "Yourself! Fitness"
   region: "NTSC-U"
@@ -75549,6 +75594,7 @@ TCES-52004:
     vuClampMode: 0 # Resolves I Reg Clamping / performance impact and yellow graphics in certain areas.
   gameFixes:
     - IbitHack # Reduces VU recompilation.
+    - BlitInternalFPSHack # Fixes internal FPS detection.
   gsHWFixes:
     halfPixelOffset: 4 # Fixes post positioning.
     nativeScaling: 2 # Fixes post effects.
@@ -75628,6 +75674,13 @@ TCPS-10058:
   name-sort: "でんしゃでごーしんかんせん さんようしんかんせんへん うんてんしせっと [PlayStation2 the Best]"
   name-en: "Densha de Go! Shinkansen Sanyou Shinkansen-hen [with Controller]"
   region: "NTSC-J"
+TCPS-10060:
+  name: "US OPEN 2002 - A USTA EVENT"
+  name-sort: "US おーぷん 2002 - A USTA いべんと"
+  name-en: "US Open 2002 - A USTA Event"
+  region: "NTSC-J"
+  gsHWFixes:
+    textureInsideRT: 1 # Fixes broken pause menu graphics.
 TCPS-10068:
   name: "電車でGO！ 旅情編 [コントローラ同梱セット]"
   name-sort: "でんしゃでごー りょじょうへん [こんとろーらどうこんせっと]"
