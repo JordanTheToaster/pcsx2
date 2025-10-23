@@ -55,7 +55,7 @@
 #       define C4CORE_HAVE_FAST_FLOAT 1
 #   endif
 #   if C4CORE_HAVE_FAST_FLOAT
-#include "fast_float/fast_float.h"
+#       include "fast_float/fast_float.h"
 #   endif
 #elif (C4_CPP >= 17)
 #   define C4CORE_HAVE_FAST_FLOAT 0

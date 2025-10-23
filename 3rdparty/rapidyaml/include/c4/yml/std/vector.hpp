@@ -1,59 +1,88 @@
-#ifndef _C4_YML_STD_VECTOR_HPP_
-#define _C4_YML_STD_VECTOR_HPP_
+#ifndef _C4_STD_VECTOR_HPP_
+#define _C4_STD_VECTOR_HPP_
 
-#include "c4/yml/node.hpp"
-#include <c4/std/vector.hpp>
+/** @file vector.hpp provides conversion and comparison facilities
+ * from/between std::vector<char> to c4::substr and c4::csubstr.
+ * @todo add to_span() and friends
+ */
+
+#ifndef C4CORE_SINGLE_HEADER
+#include "c4/substr.hpp"
+#endif
+
 #include <vector>
 
 namespace c4 {
-namespace yml {
 
-// vector is a sequence-like type, and it requires child nodes
-// in the data tree hierarchy (a SEQ node in ryml parlance).
-// So it should be serialized via write()/read().
+//-----------------------------------------------------------------------------
 
-
-template<class V, class Alloc>
-void write(c4::yml::NodeRef *n, std::vector<V, Alloc> const& vec)
-{
-    *n |= c4::yml::SEQ;
-    for(V const& v : vec)
-        n->append_child() << v;
-}
-
-/** read the node members, overwriting existing vector entries. */
-template<class V, class Alloc>
-bool read(c4::yml::ConstNodeRef const& n, std::vector<V, Alloc> *vec)
-{
-    C4_SUPPRESS_WARNING_GCC_WITH_PUSH("-Wuseless-cast")
-    vec->resize(static_cast<size_t>(n.num_children()));
-    C4_SUPPRESS_WARNING_GCC_POP
-    size_t pos = 0;
-    for(ConstNodeRef const child : n)
-        child >> (*vec)[pos++];
-    return true;
-}
-
-/** read the node members, overwriting existing vector entries.
- * specialization: std::vector<bool> uses std::vector<bool>::reference as
- * the return value of its operator[]. */
+/** get a substr (writeable string view) of an existing std::vector<char> */
 template<class Alloc>
-bool read(c4::yml::ConstNodeRef const& n, std::vector<bool, Alloc> *vec)
+c4::substr to_substr(std::vector<char, Alloc> &vec)
 {
-    C4_SUPPRESS_WARNING_GCC_WITH_PUSH("-Wuseless-cast")
-    vec->resize(static_cast<size_t>(n.num_children()));
-    C4_SUPPRESS_WARNING_GCC_POP
-    size_t pos = 0;
-    bool tmp = {};
-    for(ConstNodeRef const child : n)
+    char *data = vec.empty() ? nullptr : vec.data(); // data() may or may not return a null pointer.
+    return c4::substr(data, vec.size());
+}
+
+/** get a csubstr (read-only string) view of an existing std::vector<char> */
+template<class Alloc>
+c4::csubstr to_csubstr(std::vector<char, Alloc> const& vec)
+{
+    const char *data = vec.empty() ? nullptr : vec.data(); // data() may or may not return a null pointer.
+    return c4::csubstr(data, vec.size());
+}
+
+//-----------------------------------------------------------------------------
+// comparisons between substrings and std::vector<char>
+
+template<class Alloc> C4_ALWAYS_INLINE bool operator!= (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss != to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator== (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss == to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator>= (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss >= to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator>  (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss >  to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator<= (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss <= to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator<  (c4::csubstr ss, std::vector<char, Alloc> const& s) { return ss <  to_csubstr(s); }
+
+template<class Alloc> C4_ALWAYS_INLINE bool operator!= (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss != to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator== (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss == to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator>= (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss <= to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator>  (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss <  to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator<= (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss >= to_csubstr(s); }
+template<class Alloc> C4_ALWAYS_INLINE bool operator<  (std::vector<char, Alloc> const& s, c4::csubstr ss) { return ss >  to_csubstr(s); }
+
+//-----------------------------------------------------------------------------
+
+/** copy a std::vector<char> to a writeable string view */
+template<class Alloc>
+inline size_t to_chars(c4::substr buf, std::vector<char, Alloc> const& s)
+{
+    C4_ASSERT(!buf.overlaps(to_csubstr(s)));
+    size_t len = buf.len < s.size() ? buf.len : s.size();
+    // calling memcpy with null strings is undefined behavior
+    // and will wreak havoc in calling code's branches.
+    // see https://github.com/biojppm/rapidyaml/pull/264#issuecomment-1262133637
+    if(len > 0)
     {
-        child >> tmp;
-        (*vec)[pos++] = tmp;
+        memcpy(buf.str, s.data(), len);
+    }
+    return s.size(); // return the number of needed chars
+}
+
+/** copy a string view to an existing std::vector<char> */
+template<class Alloc>
+inline bool from_chars(c4::csubstr buf, std::vector<char, Alloc> * s)
+{
+    s->resize(buf.len);
+    C4_ASSERT(!buf.overlaps(to_csubstr(*s)));
+    // calling memcpy with null strings is undefined behavior
+    // and will wreak havoc in calling code's branches.
+    // see https://github.com/biojppm/rapidyaml/pull/264#issuecomment-1262133637
+    if(buf.len > 0)
+    {
+        memcpy(&(*s)[0], buf.str, buf.len); // NOLINT(readability-container-data-pointer)
     }
     return true;
 }
 
-} // namespace yml
 } // namespace c4
 
-#endif // _C4_YML_STD_VECTOR_HPP_
+#endif // _C4_STD_VECTOR_HPP_

@@ -1,8 +1,11 @@
-#ifndef _C4_YML_STD_STD_HPP_
-#define _C4_YML_STD_STD_HPP_
+#ifndef _C4_STD_STD_HPP_
+#define _C4_STD_STD_HPP_
 
-#include "c4/yml/std/string.hpp"
-#include "c4/yml/std/vector.hpp"
-#include "c4/yml/std/map.hpp"
+/** @file std.hpp includes all c4-std interop files */
 
-#endif // _C4_YML_STD_STD_HPP_
+#include "c4/std/vector.hpp"
+#include "c4/std/string.hpp"
+#include "c4/std/string_view.hpp"
+#include "c4/std/tuple.hpp"
+
+#endif // _C4_STD_STD_HPP_
