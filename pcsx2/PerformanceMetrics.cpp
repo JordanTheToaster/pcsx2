@@ -15,7 +15,8 @@
 #include "MTVU.h"
 #include "VMManager.h"
 
-static const float UPDATE_INTERVAL = 0.5f;
+static constexpr float FPS_TAU = 1.0f;
+static bool s_fps_initialized = false;
 
 static float s_fps = 0.0f;
 static float s_internal_fps = 0.0f;
@@ -135,6 +136,21 @@ void PerformanceMetrics::Update(bool gs_register_write, bool fb_blit, bool is_sk
 		s_average_frame_time_accumulator += frame_time;
 		s_maximum_frame_time_accumulator = std::max(s_maximum_frame_time_accumulator, frame_time);
 		s_frame_time_history[s_frame_time_history_pos] = frame_time;
+
+		float currentFps = 1000.0f / frame_time;
+
+		if (!s_fps_initialized)
+		{
+			s_fps = currentFps;
+			s_fps_initialized = true;
+		}
+		else
+		{
+			float frameTimeSeconds = frame_time / 1000.0f;
+			float alpha = frameTimeSeconds / (FPS_TAU + frameTimeSeconds);
+			s_fps += alpha * (currentFps - s_fps);
+		}
+
 		s_frame_time_history_pos = (s_frame_time_history_pos + 1) % NUM_FRAME_TIME_SAMPLES;
 		s_unskipped_frames_since_last_update++;
 	}
@@ -147,8 +163,6 @@ void PerformanceMetrics::Update(bool gs_register_write, bool fb_blit, bool is_sk
 	const Common::Timer::Value now_ticks = Common::Timer::GetCurrentValue();
 	const Common::Timer::Value ticks_diff = now_ticks - s_last_update_time.GetStartValue();
 	const float time = Common::Timer::ConvertValueToSeconds(ticks_diff);
-	if (time < UPDATE_INTERVAL)
-		return;
 
 	s_last_update_time.ResetTo(now_ticks);
 	s_minimum_frame_time = std::exchange(s_minimum_frame_time_accumulator, 0.0f);
