@@ -70,18 +70,58 @@ u64 GetAvailablePhysicalMemory()
 std::string GetOSVersionString()
 {
 	std::string retval;
-
+	typedef LONG(WINAPI * RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);
+	DWORD build = 0;
+	{
+		HMODULE hMod = GetModuleHandleA("ntdll.dll");
+		if (hMod)
+		{
+			auto func = (RtlGetVersionPtr)GetProcAddress(hMod, "RtlGetVersion");
+			if (func)
+			{
+				RTL_OSVERSIONINFOW info = {0};
+				info.dwOSVersionInfoSize = sizeof(info);
+				if (func(&info) == 0)
+					build = info.dwBuildNumber;
+			}
+		}
+	}
 	SYSTEM_INFO si;
 	GetNativeSystemInfo(&si);
 
 	if (IsWindows10OrGreater())
 	{
 		retval = "Microsoft ";
-		retval += IsWindowsServer() ? "Windows Server 2016+" : "Windows 10+";
-		
+
+		// Windows 11 starts at build 22000
+		if (build >= 22000)
+			retval += IsWindowsServer() ? "Windows Server" : "Windows 11";
+		else
+			retval += IsWindowsServer() ? "Windows Server" : "Windows 10";
 	}
 	else
+	{
 		retval = "Unsupported Operating System!";
+		return retval;
+	}
+	retval += " (";
+	switch (si.wProcessorArchitecture)
+	{
+		case PROCESSOR_ARCHITECTURE_AMD64:
+			retval += "x64";
+			break;
+		case PROCESSOR_ARCHITECTURE_ARM64:
+			retval += "ARM64";
+			break;
+		default:
+			retval += "Unknown Architecture";
+			break;
+	}
+	retval += ")";
+
+	retval += " [Build ";
+	retval += std::to_string(build);
+	retval += "]";
 
 	return retval;
 }
