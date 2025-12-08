@@ -14,8 +14,8 @@
   "sources": [
     {
       "type": "archive",
-      "url": "https://libsdl.org/release/SDL3-3.2.26.tar.gz",
-      "sha256": "dad488474a51a0b01d547cd2834893d6299328d2e30f479a3564088b5476bae2"
+      "url": "https://libsdl.org/release/SDL3-3.3.4.tar.gz",
+      "sha256": "fe9d1f842bc26816dc39ae48d62ed70b13291f4589e61b5942387e4b0f2d2c6c"
     }
   ],
   "cleanup": [
