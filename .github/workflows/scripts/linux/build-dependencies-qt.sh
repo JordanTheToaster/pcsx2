@@ -27,7 +27,7 @@ LIBPNG=1.6.53
 LIBWEBP=1.6.0
 NVENC=11.1.5.3
 SDL=SDL3-3.2.26
-QT=6.10.1
+QT=6.11.0-beta1
 QTAPNG=1.3.0
 LZ4=1.10.0
 VULKAN=1.4.328.1
@@ -60,12 +60,12 @@ dad488474a51a0b01d547cd2834893d6299328d2e30f479a3564088b5476bae2  $SDL.tar.gz
 2974b91062197e0527dffa3aadd8fe3bfa6681ae45f5ff9181bc0ca6479abd59  nv-codec-headers-$NVENC.tar.gz
 c465aa56757e7746ac707f582b6e2d51546569a4a2488c1172fb543aa5fdfc2c  vulkan-sdk-$VULKAN.tar.gz
 eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3  zstd-$ZSTD.tar.gz
-5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d  qtbase-everywhere-src-$QT.tar.xz
-498eabdf2381db96f808942b3e3c765f6360fe6c0e9961f0a45ff7a4c68d7a72  qtimageformats-everywhere-src-$QT.tar.xz
-c02f355a58f3bbcf404a628bf488b6aeb2d84a94c269afdb86f6e529343ab01f  qtsvg-everywhere-src-$QT.tar.xz
-8148408380ffea03101a26305c812b612ea30dbc07121e58707601522404d49b  qttools-everywhere-src-$QT.tar.xz
-8e49a2df88a12c376a479ae7bd272a91cf57ebb4e7c0cf7341b3565df99d2314  qttranslations-everywhere-src-$QT.tar.xz
-49bf6db800227a6b2c971f4c5d03dd1e81297e7ffb296ce4a96437304f27cb13  qtwayland-everywhere-src-$QT.tar.xz
+3fbf432dfa252e7c0101897ca34bfb7c152e39ffaeb0ff3732f73997a3e898b5  qtbase-everywhere-src-$QT.tar.xz
+f3717a944aa62721d3ae085375fcc35c14947959e2e4e0e7d2d608b2359d20a8  qtimageformats-everywhere-src-$QT.tar.xz
+c05b030172c41fa03645eee038877e3ea27ff562e3a66fe4ca6cf5509f98a42f  qtsvg-everywhere-src-$QT.tar.xz
+8e327c8e1110c587c410076d37b44625ec3b5e97d410926a7ab1229567347c4f  qttools-everywhere-src-$QT.tar.xz
+f960f86f8922e9f0b485fb6debf8b25b4abdfba07b32f94dceef4a1ca057def5  qttranslations-everywhere-src-$QT.tar.xz
+62c396b87d3b37218f3949b11c35a9e689ebaaa06b04dbe32630f5e949c1d408  qtwayland-everywhere-src-$QT.tar.xz
 f1d3be3489f758efe1a8f12118a212febbe611aa670af32e0159fa3c1feab2a6  QtApng-$QTAPNG.tar.gz
 8a89fb6612ace8954470aae004623374a8fc8b7a34a4277bee5527173b064faf  shaderc-$SHADERC.tar.gz
 272d2725b140e09e85b96eecdc59c2e00c1a14cda2301767e1bf3c363a44b931  shaderc-glslang-$SHADERC_GLSLANG.tar.gz
@@ -90,12 +90,12 @@ curl -L \
 	-O "https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/vulkan-sdk-$VULKAN.tar.gz" \
 	-O "https://github.com/FFmpeg/nv-codec-headers/releases/download/n$NVENC/nv-codec-headers-$NVENC.tar.gz" \
 	-O "https://ffmpeg.org/releases/ffmpeg-$FFMPEG.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/official_releases/qt/${QT%.*}/$QT/submodules/qtwayland-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtwayland-everywhere-src-$QT.tar.xz" \
 	-o "QtApng-$QTAPNG.tar.gz" "https://github.com/jurplel/QtApng/archive/refs/tags/$QTAPNG.tar.gz" \
 	-o "shaderc-$SHADERC.tar.gz" "https://github.com/google/shaderc/archive/refs/tags/v$SHADERC.tar.gz" \
 	-o "shaderc-glslang-$SHADERC_GLSLANG.tar.gz" "https://github.com/KhronosGroup/glslang/archive/$SHADERC_GLSLANG.tar.gz" \
