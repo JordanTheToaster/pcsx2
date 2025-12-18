@@ -30,7 +30,7 @@ LIBJPEGTURBO=3.1.2
 LIBWEBP=1.6.0
 FFMPEG=8.0
 MOLTENVK=1.4.1
-QT=6.10.1
+QT=6.11.0-beta1
 QTAPNG=1.3.0
 KDDOCKWIDGETS=2.4.0
 PLUTOVG=1.3.2
@@ -70,11 +70,11 @@ e4ab7009bf0629fd11982d4c2aa83964cf244cffba7347ecd39019a9e38c4564  libwebp-$LIBWE
 8f0012234b464ce50890c490f18194f913a7b1f4e6a03d6644179fa0f867d0cf  libjpeg-turbo-$LIBJPEGTURBO.tar.gz
 b2751fccb6cc4c77708113cd78b561059b6fa904b24162fa0be2d60273d27b8e  ffmpeg-$FFMPEG.tar.xz
 9985f141902a17de818e264d17c1ce334b748e499ee02fcb4703e4dc0038f89c  v$MOLTENVK.tar.gz
-5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d  qtbase-everywhere-src-$QT.tar.xz
-498eabdf2381db96f808942b3e3c765f6360fe6c0e9961f0a45ff7a4c68d7a72  qtimageformats-everywhere-src-$QT.tar.xz
-c02f355a58f3bbcf404a628bf488b6aeb2d84a94c269afdb86f6e529343ab01f  qtsvg-everywhere-src-$QT.tar.xz
-8148408380ffea03101a26305c812b612ea30dbc07121e58707601522404d49b  qttools-everywhere-src-$QT.tar.xz
-8e49a2df88a12c376a479ae7bd272a91cf57ebb4e7c0cf7341b3565df99d2314  qttranslations-everywhere-src-$QT.tar.xz
+3fbf432dfa252e7c0101897ca34bfb7c152e39ffaeb0ff3732f73997a3e898b5  qtbase-everywhere-src-$QT.tar.xz
+f3717a944aa62721d3ae085375fcc35c14947959e2e4e0e7d2d608b2359d20a8  qtimageformats-everywhere-src-$QT.tar.xz
+c05b030172c41fa03645eee038877e3ea27ff562e3a66fe4ca6cf5509f98a42f  qtsvg-everywhere-src-$QT.tar.xz
+8e327c8e1110c587c410076d37b44625ec3b5e97d410926a7ab1229567347c4f  qttools-everywhere-src-$QT.tar.xz
+f960f86f8922e9f0b485fb6debf8b25b4abdfba07b32f94dceef4a1ca057def5  qttranslations-everywhere-src-$QT.tar.xz
 f1d3be3489f758efe1a8f12118a212febbe611aa670af32e0159fa3c1feab2a6  QtApng-$QTAPNG.tar.gz
 8a89fb6612ace8954470aae004623374a8fc8b7a34a4277bee5527173b064faf  shaderc-$SHADERC.tar.gz
 272d2725b140e09e85b96eecdc59c2e00c1a14cda2301767e1bf3c363a44b931  shaderc-glslang-$SHADERC_GLSLANG.tar.gz
@@ -97,11 +97,11 @@ curl -L \
 	-O "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-$LIBWEBP.tar.gz" \
 	-O "https://ffmpeg.org/releases/ffmpeg-$FFMPEG.tar.xz" \
 	-O "https://github.com/KhronosGroup/MoltenVK/archive/refs/tags/v$MOLTENVK.tar.gz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
-	-O "https://download.qt.io/archive/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtbase-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtimageformats-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qtsvg-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttools-everywhere-src-$QT.tar.xz" \
+	-O "https://download.qt.io/development_releases/qt/${QT%.*}/$QT/submodules/qttranslations-everywhere-src-$QT.tar.xz" \
 	-o "QtApng-$QTAPNG.tar.gz" "https://github.com/jurplel/QtApng/archive/refs/tags/$QTAPNG.tar.gz" \
 	-o "shaderc-$SHADERC.tar.gz" "https://github.com/google/shaderc/archive/refs/tags/v$SHADERC.tar.gz" \
 	-o "shaderc-glslang-$SHADERC_GLSLANG.tar.gz" "https://github.com/KhronosGroup/glslang/archive/$SHADERC_GLSLANG.tar.gz" \
