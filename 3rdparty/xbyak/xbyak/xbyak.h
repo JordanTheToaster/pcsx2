@@ -37,8 +37,19 @@
 	#define XBYAK_GNUC_PREREQ(major, minor) 0
 #endif
 
+// User defined (must define all 3)
+#if defined(XBYAK_STD_UNORDERED_SET) || defined(XBYAK_STD_UNORDERED_MAP) || defined(XBYAK_STD_UNORDERED_MULTIMAP)
+	#ifndef XBYAK_STD_UNORDERED_SET
+		#error "Define XBYAK_STD_UNORDERED_SET"
+	#endif
+	#ifndef XBYAK_STD_UNORDERED_MAP
+		#error "Define XBYAK_STD_UNORDERED_MAP"
+	#endif
+	#ifndef XBYAK_STD_UNORDERED_MULTIMAP
+		#error "Define XBYAK_STD_UNORDERED_MULTIMAP"
+	#endif
 // This covers -std=(gnu|c)++(0x|11|1y), -stdlib=libc++, and modern Microsoft.
-#if ((defined(_MSC_VER) && (_MSC_VER >= 1600)) || defined(_LIBCPP_VERSION) ||\
+#elif ((defined(_MSC_VER) && (_MSC_VER >= 1600)) || defined(_LIBCPP_VERSION) ||\
 	 			 ((__cplusplus >= 201103) || defined(__GXX_EXPERIMENTAL_CXX0X__)))
 	#include <unordered_set>
 	#define XBYAK_STD_UNORDERED_SET std::unordered_set
@@ -163,7 +174,7 @@ namespace Xbyak {
 
 enum {
 	DEFAULT_MAX_CODE_SIZE = 4096,
-	VERSION = 0x7300 /* 0xABCD = A.BC(.D) */
+	VERSION = 0x7333 /* 0xABCD = A.BC(.D) */
 };
 
 #ifndef MIE_INTEGER_TYPE_DEFINED
@@ -242,6 +253,8 @@ enum {
 	ERR_INVALID_REG_IDX,
 	ERR_BAD_ENCODING_MODE,
 	ERR_CANT_USE_ABCDH,
+	ERR_CANT_INIT_CPUTOPOLOGY,
+	ERR_INVALID_CPUMASK_INDEX,
 	ERR_INTERNAL // Put it at last.
 };
 
@@ -302,6 +315,8 @@ inline const char *ConvertErrorToString(int err)
 		"invalid reg index",
 		"bad encoding mode",
 		"can't use [abcd]h with rex",
+		"can't init CpuTopology",
+		"invalid cpumask index",
 		"internal error"
 	};
 	assert(ERR_INTERNAL + 1 == sizeof(errTbl) / sizeof(*errTbl));
