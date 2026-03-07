@@ -401,7 +401,7 @@ bool ImGuiManager::LoadFontData()
 	if (s_fixed_font_data.empty())
 	{
 		std::optional<std::vector<u8>> font_data = FileSystem::ReadBinaryFile(
-			EmuFolders::GetOverridableResourcePath("fonts" FS_OSPATH_SEPARATOR_STR "RobotoMono-Medium.ttf").c_str());
+			EmuFolders::GetOverridableResourcePath("fonts" FS_OSPATH_SEPARATOR_STR "KodeMono-SemiBold.ttf").c_str());
 		if (!font_data.has_value())
 			return false;
 
