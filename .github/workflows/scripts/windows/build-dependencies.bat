@@ -69,7 +69,7 @@ set FFMPEG=9.0
 set MESON=1.10.2
 set PKGCONF=2.5.1
 set AMF=1.5.2
-set LIBVPL=2.16.0
+set LIBVPL=2.17.0
 set NVENC=13.0.19.0
 set LIBOPUS=1.6.1
 set LIBSVTAV1=4.2.0
@@ -110,7 +110,7 @@ call :downloadfile "ffmpeg-%FFMPEG%.tar.xz" "https://ffmpeg.org/releases/ffmpeg-
 call :downloadfile "meson-%MESON%.tar.gz" "https://github.com/mesonbuild/meson/releases/download/%MESON%/meson-%MESON%.tar.gz" 7890287d911dd4ee1ebd0efb61ed0321bfcd87c725df923a837cf90c6508f96b || goto error
 call :downloadfile "pkgconf-pkgconf-%PKGCONF%.zip" "https://github.com/pkgconf/pkgconf/archive/refs/tags/pkgconf-%PKGCONF%.zip" c5b5f88a2ca2324dc5d857e35bb145e24290e326357ea94a86d47b8d7fa15477 || goto error
 call :downloadfile "amf-headers-v%AMF%.tar.gz" "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/releases/download/v%AMF%/AMF-headers-v%AMF%.tar.gz" d3c12eb324edf05e214608b6a395a51dd95770ed9d45520185d6c3a206811c99 || goto error
-call :downloadfile "libvpl-%LIBVPL%.zip" "https://github.com/intel/libvpl/archive/v%LIBVPL%.zip" 0b2ee8da8b9ef07ed4b52bf9ddee05008ec999b7c3c41944d7a9f804631c398e || goto error
+call :downloadfile "libvpl-%LIBVPL%.zip" "https://github.com/intel/libvpl/archive/v%LIBVPL%.zip" 980d9f3f1dbecc7cbc28b0ff0c0647f925cbaf72844c85515b69b89e9603c35d || goto error
 call :downloadfile "nv-codec-headers-%NVENC%.tar.gz" "https://github.com/FFmpeg/nv-codec-headers/releases/download/n%NVENC%/nv-codec-headers-%NVENC%.tar.gz" 13da39edb3a40ed9713ae390ca89faa2f1202c9dda869ef306a8d4383e242bee || goto error
 call :downloadfile "opus-%LIBOPUS%.tar.gz" "https://downloads.xiph.org/releases/opus/opus-%LIBOPUS%.tar.gz" 6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1 || goto error
 call :downloadfile "SVT-AV1-v%LIBSVTAV1%.zip" "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v%LIBSVTAV1%/SVT-AV1-v%LIBSVTAV1%.zip" 007d1bd64ae85eaeea51db7465c4b360d115dc2d33d2ad42491c7d2ae7a9124e || goto error
