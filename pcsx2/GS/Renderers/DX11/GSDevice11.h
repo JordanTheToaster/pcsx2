@@ -12,7 +12,7 @@
 #include <unordered_map>
 
 #include <wil/com.h>
-#include <dxgi1_5.h>
+#include <dxgi1_6.h>
 #include <d3d11_1.h>
 
 struct GSVertexShader11
@@ -124,7 +124,7 @@ private:
 	bool CreateImGuiResources();
 	void RenderImGui();
 
-	wil::com_ptr_nothrow<IDXGIFactory5> m_dxgi_factory;
+	wil::com_ptr_nothrow<IDXGIFactory6> m_dxgi_factory;
 	wil::com_ptr_nothrow<ID3D11Device1> m_dev;
 	wil::com_ptr_nothrow<ID3D11DeviceContext1> m_ctx;
 	wil::com_ptr_nothrow<ID3DUserDefinedAnnotation> m_annotation;

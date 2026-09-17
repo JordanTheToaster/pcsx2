@@ -307,10 +307,35 @@ bool GSDevice12::CreateDevice(u32& vendor_id)
 	if (!m_dxgi_factory)
 		return false;
 
-	m_adapter = D3D::GetAdapterByName(m_dxgi_factory.get(), GSConfig.Adapter);
-	vendor_id = GetAdapterVendorID();
+	m_adapter = nullptr;
 
 	HRESULT hr;
+
+	hr = m_dxgi_factory->EnumAdapterByGpuPreference(
+		0,
+		DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE,
+		IID_PPV_ARGS(m_adapter.put()));
+
+	if (FAILED(hr))
+	{
+		Console.Error("D3D12: Failed to select high-performance adapter: %08X", hr);
+		return false;
+	}
+
+	DXGI_ADAPTER_DESC1 adapter_desc;
+	hr = m_adapter->GetDesc1(&adapter_desc);
+
+	if (FAILED(hr))
+	{
+		Console.Error("D3D12: Failed to get adapter description: %08X", hr);
+		return false;
+	}
+
+		Console.WriteLnFmt(
+		"D3D12: High-performance adapter: {}",
+		StringUtil::StdStringFromFormat("%ls", adapter_desc.Description));
+
+	vendor_id = GetAdapterVendorID();
 
 	// Load the Agility SDK
 	LoadAgilitySDK();

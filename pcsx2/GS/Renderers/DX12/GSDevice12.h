@@ -12,7 +12,7 @@
 #include "common/HashCombine.h"
 
 #include <array>
-#include <dxgi1_5.h>
+#include <dxgi1_6.h>
 #include <unordered_map>
 
 namespace D3D12MA
@@ -374,7 +374,7 @@ public:
 	};
 
 private:
-	ComPtr<IDXGIFactory5> m_dxgi_factory;
+	ComPtr<IDXGIFactory6> m_dxgi_factory;
 	ComPtr<IDXGISwapChain1> m_swap_chain;
 	std::vector<std::unique_ptr<GSTexture12>> m_swap_chain_buffers;
 	u32 m_current_swap_chain_buffer = 0;
