@@ -29,18 +29,40 @@
 
 static u32 s_next_bad_shader_id = 1;
 
-wil::com_ptr_nothrow<IDXGIFactory5> D3D::CreateFactory(bool debug)
+wil::com_ptr_nothrow<IDXGIFactory6> D3D::CreateFactory(bool debug)
 {
 	UINT flags = 0;
 	if (debug)
 		flags |= DXGI_CREATE_FACTORY_DEBUG;
 
-	wil::com_ptr_nothrow<IDXGIFactory5> factory;
+	wil::com_ptr_nothrow<IDXGIFactory6> factory;
 	const HRESULT hr = CreateDXGIFactory2(flags, IID_PPV_ARGS(factory.put()));
 	if (FAILED(hr))
 		Console.Error("D3D: Failed to create DXGI factory: %08X", hr);
 
 	return factory;
+}
+
+wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetHighPerformanceAdapter(IDXGIFactory6* factory)
+{
+	wil::com_ptr_nothrow<IDXGIAdapter1> adapter;
+
+	const HRESULT hr = factory->EnumAdapterByGpuPreference(
+		0,
+		DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE,
+		IID_PPV_ARGS(adapter.put()));
+
+	if (FAILED(hr))
+	{
+		Console.Error(
+			fmt::format(
+				"D3D: EnumAdapterByGpuPreference() failed: {:08X}",
+				static_cast<unsigned>(hr)));
+
+		return {};
+	}
+
+	return adapter;
 }
 
 static std::string FixupDuplicateAdapterNames(const std::vector<GSAdapterInfo>& adapters, std::string adapter_name)
@@ -62,7 +84,7 @@ static std::string FixupDuplicateAdapterNames(const std::vector<GSAdapterInfo>& 
 	return adapter_name;
 }
 
-std::vector<GSAdapterInfo> D3D::GetAdapterInfo(IDXGIFactory5* factory)
+std::vector<GSAdapterInfo> D3D::GetAdapterInfo(IDXGIFactory6* factory)
 {
 	std::vector<GSAdapterInfo> adapters;
 
@@ -124,7 +146,7 @@ std::vector<GSAdapterInfo> D3D::GetAdapterInfo(IDXGIFactory5* factory)
 	return adapters;
 }
 
-bool D3D::GetRequestedExclusiveFullscreenModeDesc(IDXGIFactory5* factory, HWND window_hwnd, u32 width,
+bool D3D::GetRequestedExclusiveFullscreenModeDesc(IDXGIFactory6* factory, HWND window_hwnd, u32 width,
 	u32 height, float refresh_rate, DXGI_FORMAT format, DXGI_MODE_DESC* fullscreen_mode, IDXGIOutput** output)
 {
 	// We need to find which monitor the window is located on.
@@ -197,7 +219,7 @@ bool D3D::GetRequestedExclusiveFullscreenModeDesc(IDXGIFactory5* factory, HWND w
 	return true;
 }
 
-wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetAdapterByName(IDXGIFactory5* factory, const std::string_view name)
+wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetAdapterByName(IDXGIFactory6* factory, const std::string_view name)
 {
 	if (name.empty() || name == GetDefaultAdapter())
 		return {};
@@ -234,7 +256,7 @@ wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetAdapterByName(IDXGIFactory5* factory
 	return {};
 }
 
-wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetFirstAdapter(IDXGIFactory5* factory)
+wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetFirstAdapter(IDXGIFactory6* factory)
 {
 	wil::com_ptr_nothrow<IDXGIAdapter1> adapter;
 	HRESULT hr = factory->EnumAdapters1(0, adapter.put());
@@ -244,7 +266,7 @@ wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetFirstAdapter(IDXGIFactory5* factory)
 	return adapter;
 }
 
-wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetChosenOrFirstAdapter(IDXGIFactory5* factory, const std::string_view name)
+wil::com_ptr_nothrow<IDXGIAdapter1> D3D::GetChosenOrFirstAdapter(IDXGIFactory6* factory, const std::string_view name)
 {
 	wil::com_ptr_nothrow<IDXGIAdapter1> adapter = GetAdapterByName(factory, name);
 	if (!adapter)

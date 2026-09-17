@@ -10,7 +10,7 @@
 #include "GS/GS.h"
 
 #include <d3d11_1.h>
-#include <dxgi1_5.h>
+#include <dxgi1_6.h>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -18,29 +18,31 @@
 namespace D3D
 {
 	// create a dxgi factory
-	wil::com_ptr_nothrow<IDXGIFactory5> CreateFactory(bool debug);
+	wil::com_ptr_nothrow<IDXGIFactory6> CreateFactory(bool debug);
 
 	// returns a list of all adapter information
-	std::vector<GSAdapterInfo> GetAdapterInfo(IDXGIFactory5* factory);
+	std::vector<GSAdapterInfo> GetAdapterInfo(IDXGIFactory6* factory);
 
 	// returns the fullscreen mode to use for the specified dimensions
-	bool GetRequestedExclusiveFullscreenModeDesc(IDXGIFactory5* factory, HWND window_hwnd, u32 width, u32 height,
+	bool GetRequestedExclusiveFullscreenModeDesc(IDXGIFactory6* factory, HWND window_hwnd, u32 width, u32 height,
 		float refresh_rate, DXGI_FORMAT format, DXGI_MODE_DESC* fullscreen_mode, IDXGIOutput** output);
 
 	// get an adapter based on name
-	wil::com_ptr_nothrow<IDXGIAdapter1> GetAdapterByName(IDXGIFactory5* factory, const std::string_view name);
+	wil::com_ptr_nothrow<IDXGIAdapter1> GetAdapterByName(IDXGIFactory6* factory, const std::string_view name);
 
 	// returns the first adapter in the system
-	wil::com_ptr_nothrow<IDXGIAdapter1> GetFirstAdapter(IDXGIFactory5* factory);
+	wil::com_ptr_nothrow<IDXGIAdapter1> GetFirstAdapter(IDXGIFactory6* factory);
 
 	// returns the adapter specified in the configuration, or the default
-	wil::com_ptr_nothrow<IDXGIAdapter1> GetChosenOrFirstAdapter(IDXGIFactory5* factory, const std::string_view name);
+	wil::com_ptr_nothrow<IDXGIAdapter1> GetChosenOrFirstAdapter(IDXGIFactory6* factory, const std::string_view name);
 
 	// returns a utf-8 string of the specified adapter's name
 	std::string GetAdapterName(IDXGIAdapter1* adapter);
 
 	// returns the driver version from the registry as a string
 	std::string GetDriverVersionFromLUID(const LUID& luid);
+
+	wil::com_ptr_nothrow<IDXGIAdapter1> GetHighPerformanceAdapter(IDXGIFactory6* factory);
 
 	// this is sort of a legacy thing that doesn't have much to do with d3d (just the easiest way)
 	// checks to see if the adapter at 0 is NV and thus we should prefer OpenGL
