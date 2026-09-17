@@ -26,6 +26,7 @@
 
 #include <sstream>
 #include <limits>
+#include <dxgi1_5.h>
 
 #ifdef ENABLE_OGL_DEBUG
 #define USE_PIX
@@ -43,6 +44,27 @@ static constexpr std::array<D3D12_PRIMITIVE_TOPOLOGY, 3> s_primitive_topology_ma
 	{D3D_PRIMITIVE_TOPOLOGY_POINTLIST, D3D_PRIMITIVE_TOPOLOGY_LINELIST, D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST}};
 
 static constexpr std::array<float, 4> s_present_clear_color = {};
+
+u64 GSDevice12::GetVideoMemoryUsage() const
+{
+	D3D12MA::TotalStatistics stats = {};
+	m_allocator->CalculateStatistics(&stats);
+
+	return stats.Total.Stats.BlockBytes;
+}
+
+std::pair<u64, u64> GSDevice12::GetVideoMemoryInfo() const
+{
+	ComPtr<IDXGIAdapter3> adapter;
+	if (FAILED(m_adapter->QueryInterface(IID_PPV_ARGS(&adapter))))
+		return {};
+
+	DXGI_QUERY_VIDEO_MEMORY_INFO info = {};
+	if (FAILED(adapter->QueryVideoMemoryInfo(0, DXGI_MEMORY_SEGMENT_GROUP_LOCAL, &info)))
+		return {};
+
+	return {info.CurrentUsage, info.Budget};
+}
 
 static D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE GetLoadOpForTexture(GSTexture12* tex)
 {

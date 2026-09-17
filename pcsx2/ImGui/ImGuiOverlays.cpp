@@ -60,6 +60,7 @@ ImU32 s_speed_line_color;
 SmallString s_speed_line;
 SmallString s_gs_stats_line;
 SmallString s_gs_memory_stats_line;
+SmallString s_gs_d3d12_memory_stats_line;
 SmallString s_gs_frame_times_line;
 SmallString s_resolution_line;
 SmallString s_hardware_info_cpu_line;
@@ -369,6 +370,11 @@ __ri void ImGuiManager::DrawPerformanceOverlay(float& position_y, float scale, f
 			{
 				GSgetStats(s_gs_stats_line);
 				GSgetMemoryStats(s_gs_memory_stats_line);
+
+			#ifdef _WIN32
+				GSgetD3D12MemoryStats(s_gs_d3d12_memory_stats_line);
+			#endif
+
 				s_gs_frame_times_line.format("{} QF | Min: {:.2f}ms | Avg: {:.2f}ms | Max: {:.2f}ms",
 					MTGS::GetCurrentVsyncQueueSize() - 1, // subtract one for the current frame
 					PerformanceMetrics::GetMinimumFrameTime(),
@@ -377,8 +383,15 @@ __ri void ImGuiManager::DrawPerformanceOverlay(float& position_y, float scale, f
 
 				if (!s_gs_stats_line.empty())
 					DRAW_LINE(osd_font, font_size, s_gs_stats_line.c_str(), white_color);
+
 				if (!s_gs_memory_stats_line.empty())
 					DRAW_LINE(osd_font, font_size, s_gs_memory_stats_line.c_str(), white_color);
+
+			#ifdef _WIN32
+				if (!s_gs_d3d12_memory_stats_line.empty())
+					DRAW_LINE(osd_font, font_size, s_gs_d3d12_memory_stats_line.c_str(), white_color);
+			#endif
+
 				DRAW_LINE(osd_font, font_size, s_gs_frame_times_line.c_str(), white_color);
 			}
 
@@ -524,8 +537,15 @@ __ri void ImGuiManager::DrawPerformanceOverlay(float& position_y, float scale, f
 			{
 				if (!s_gs_stats_line.empty())
 					DRAW_LINE(osd_font, font_size, s_gs_stats_line.c_str(), white_color);
+
 				if (!s_gs_memory_stats_line.empty())
 					DRAW_LINE(osd_font, font_size, s_gs_memory_stats_line.c_str(), white_color);
+
+			#ifdef _WIN32
+				if (!s_gs_d3d12_memory_stats_line.empty())
+					DRAW_LINE(osd_font, font_size, s_gs_d3d12_memory_stats_line.c_str(), white_color);
+			#endif
+
 				DRAW_LINE(osd_font, font_size, s_gs_frame_times_line.c_str(), white_color);
 			}
 

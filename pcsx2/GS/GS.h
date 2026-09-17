@@ -103,6 +103,7 @@ GSVideoMode GSgetDisplayMode();
 void GSgetInternalResolution(int* width, int* height);
 void GSgetStats(SmallStringBase& info);
 void GSgetMemoryStats(SmallStringBase& info);
+void GSgetD3D12MemoryStats(SmallStringBase& info);
 void GSgetTitleStats(std::string& info);
 
 /// Converts window position to normalized display coordinates (0..1). A value less than 0 or greater than 1 is
