@@ -820,6 +820,46 @@ void GSgetMemoryStats(SmallStringBase& info)
 	}
 }
 
+#ifdef _WIN32
+void GSgetD3D12MemoryStats(SmallStringBase& info)
+{
+	if (!g_gs_device || g_gs_device->GetRenderAPI() != RenderAPI::D3D12)
+	{
+		info.assign("");
+		return;
+	}
+
+	auto* device12 = static_cast<GSDevice12*>(g_gs_device.get());
+	if (!device12)
+	{
+		info.assign("");
+		return;
+	}
+
+	// Get megabyte values. Round negligible values to 0.1 MB to avoid swamping.
+	const auto get_MB = [](const double bytes) {
+		return (bytes <= 0.0 ? bytes : std::max(0.1, bytes / static_cast<double>(_1mb)));
+	};
+
+	const auto format_precision = [](const double megabytes) -> std::string {
+		return (megabytes < 10.0 ?
+					fmt::format("{:.1f}", megabytes) :
+					fmt::format("{:.0f}", std::round(megabytes)));
+	};
+
+	const double d3d12_MB = get_MB(static_cast<double>(device12->GetVideoMemoryUsage()));
+
+	const auto [gpu_usage, gpu_budget] = device12->GetVideoMemoryInfo();
+	const double gpu_usage_MB = get_MB(static_cast<double>(gpu_usage));
+	const double gpu_budget_MB = get_MB(static_cast<double>(gpu_budget));
+
+	info.format("D3D12 ALLOC: {} MB | GPU: {} MB / {} MB",
+		format_precision(d3d12_MB),
+		format_precision(gpu_usage_MB),
+		format_precision(gpu_budget_MB));
+}
+#endif
+
 void GSgetTitleStats(std::string& info)
 {
 	static constexpr const char* deinterlace_modes[] = {

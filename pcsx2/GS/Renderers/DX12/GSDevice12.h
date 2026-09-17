@@ -516,6 +516,8 @@ public:
 	bool SupportsExclusiveFullscreen() const override;
 	void DestroySurface() override;
 	std::string GetDriverInfo() const override;
+	u64 GetVideoMemoryUsage() const;
+	std::pair<u64, u64> GetVideoMemoryInfo() const;
 
 	void SetVSyncMode(GSVSyncMode mode, bool allow_present_throttle) override;
 
