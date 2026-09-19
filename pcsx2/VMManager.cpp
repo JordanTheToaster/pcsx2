@@ -60,6 +60,8 @@
 #include "cpuinfo.h"
 #include "discord_rpc.h"
 #include "fmt/format.h"
+#include <SDL3/SDL_version.h>
+#include <libavutil/version.h>
 
 #include <atomic>
 #include <mutex>
@@ -2611,7 +2613,13 @@ void LogGPUCapabilities()
 void VMManager::LogCPUCapabilities()
 {
 	Console.WriteLn(Color_StrongGreen, "PCSX2 %s", BuildVersion::GitRev);
-	Console.WriteLnFmt("Savestate version: 0x{:x}\n", g_SaveVersion);
+	Console.WriteLnFmt("Savestate Version: 0x{:x}\n", g_SaveVersion);
+	Console.WriteLn();
+
+	Console.WriteLn(Color_StrongBlack, "Dependencies:");
+	const int sdl_version = SDL_GetVersion();
+	Console.WriteLnFmt("SDL3 Version: {}.{}.{}", SDL_VERSIONNUM_MAJOR(sdl_version), SDL_VERSIONNUM_MINOR(sdl_version), SDL_VERSIONNUM_MICRO(sdl_version));
+	Console.WriteLnFmt("FFmpeg Version: {}.{}.{}",LIBAVUTIL_VERSION_MAJOR,LIBAVUTIL_VERSION_MINOR,LIBAVUTIL_VERSION_MICRO);
 	Console.WriteLn();
 
 	Console.WriteLn(Color_StrongBlack, "Host Machine Init:");
