@@ -109,6 +109,10 @@ namespace PerformanceMetrics
 	float GetGPUAverageTime();
 	double GetGPUAverageVSInvocations();
 	double GetGPUAveragePSInvocations();
+	double GetCPUThreadFPSCeiling();
+	double GetGSThreadFPSCeiling();
+	double GetVUThreadFPSCeiling();
+	double GetGPUFPSCeiling();
 
 	const FrameTimeHistory& GetFrameTimeHistory();
 	u32 GetFrameTimeHistoryPos();

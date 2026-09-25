@@ -375,11 +375,15 @@ __ri void ImGuiManager::DrawPerformanceOverlay(float& position_y, float scale, f
 				GSgetD3D12MemoryStats(s_gs_d3d12_memory_stats_line);
 			#endif
 
-				s_gs_frame_times_line.format("{} QF | Min: {:.2f}ms | Avg: {:.2f}ms | Max: {:.2f}ms",
+				s_gs_frame_times_line.format("{} QF | Min: {:.2f}ms | Avg: {:.2f}ms | Max: {:.2f}ms | " "EE: {:.1f} FPS | GS: {:.1f} FPS | VU: {:.1f} FPS | GPU: {:.1f} FPS",
 					MTGS::GetCurrentVsyncQueueSize() - 1, // subtract one for the current frame
 					PerformanceMetrics::GetMinimumFrameTime(),
 					PerformanceMetrics::GetAverageFrameTime(),
-					PerformanceMetrics::GetMaximumFrameTime());
+					PerformanceMetrics::GetMaximumFrameTime(),
+					PerformanceMetrics::GetCPUThreadFPSCeiling(),
+					PerformanceMetrics::GetGSThreadFPSCeiling(),
+					PerformanceMetrics::GetVUThreadFPSCeiling(),
+					PerformanceMetrics::GetGPUFPSCeiling());
 
 				if (!s_gs_stats_line.empty())
 					DRAW_LINE(osd_font, font_size, s_gs_stats_line.c_str(), white_color);
