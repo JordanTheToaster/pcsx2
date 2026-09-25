@@ -36,6 +36,7 @@ private Q_SLOTS:
 	void onSWTextureFilteringChange();
 	void onRendererChanged(int index);
 	void onAdapterChanged(int index);
+	bool eventFilter(QObject* object, QEvent* event) override;
 	void onUpscaleMultiplierChanged();
 	void onTrilinearFilteringChanged();
 	void onGpuPaletteConversionChanged(int state);
