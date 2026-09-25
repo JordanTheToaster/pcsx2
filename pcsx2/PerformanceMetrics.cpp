@@ -370,6 +370,31 @@ namespace PerformanceMetrics
 		return s_cpu_thread_usage;
 	}
 
+	static double CalculateFPSCeiling(const double frame_time_ms)
+	{
+		return (frame_time_ms > 0.0) ? (1000.0 / frame_time_ms) : 0.0;
+	}
+
+	double GetCPUThreadFPSCeiling()
+	{
+		return CalculateFPSCeiling(GetCPUThreadAverageTime());
+	}
+
+	double GetGSThreadFPSCeiling()
+	{
+		return CalculateFPSCeiling(GetGSThreadAverageTime());
+	}
+
+	double GetVUThreadFPSCeiling()
+	{
+		return CalculateFPSCeiling(GetVUThreadAverageTime());
+	}
+
+	double GetGPUFPSCeiling()
+	{
+		return CalculateFPSCeiling(GetGPUAverageTime());
+	}
+
 	double GetCPUThreadAverageTime()
 	{
 		return s_cpu_thread_time;
