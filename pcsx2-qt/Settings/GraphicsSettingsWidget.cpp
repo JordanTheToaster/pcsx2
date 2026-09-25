@@ -276,6 +276,7 @@ GraphicsSettingsWidget::GraphicsSettingsWidget(SettingsWindow* settings_dialog, 
 	}
 
 	connect(m_header.rendererDropdown, &QComboBox::currentIndexChanged, this, &GraphicsSettingsWidget::onRendererChanged);
+	m_header.rendererDropdown->installEventFilter(this);
 	connect(m_header.adapterDropdown, &QComboBox::currentIndexChanged, this, &GraphicsSettingsWidget::onAdapterChanged);
 	connect(m_hw.enableHWFixes, &QCheckBox::checkStateChanged, this, &GraphicsSettingsWidget::updateRendererDependentOptions);
 	connect(m_advanced.extendedUpscales, &QCheckBox::checkStateChanged, this, &GraphicsSettingsWidget::updateRendererDependentOptions);
@@ -856,6 +857,45 @@ void GraphicsSettingsWidget::onSWTextureFilteringChange()
 	const QSignalBlocker block(m_hw.textureFiltering);
 
 	m_hw.textureFiltering->setCurrentIndex(m_sw.swTextureFiltering->currentIndex());
+}
+
+bool GraphicsSettingsWidget::eventFilter(QObject* object, QEvent* event)
+{
+	if (object == m_header.rendererDropdown && event->type() == QEvent::MouseButtonPress)
+	{
+		const int index = m_header.rendererDropdown->currentIndex();
+		const int renderer_index = dialog()->isPerGameSettings() ? index - 1 : index;
+
+		if (renderer_index >= 0 && s_renderer_info[renderer_index].type == GSRendererType::Auto && !Host::GetBaseBoolSettingValue("UI", "AutomaticRendererWarningShown", false))
+		{
+			QCheckBox* cb = new QCheckBox(tr("Do not show again"));
+
+			QMessageBox mb(this);
+			mb.setWindowIcon(QtHost::GetAppIcon());
+			mb.setWindowModality(Qt::WindowModal);
+			mb.setWindowTitle(tr("Automatic Renderer"));
+			mb.setText(tr(
+				"PCSX2 will automatically select the graphics renderer for you.\n\n"
+				"We will break your knees with hammers you will pay for your crimes.\n\n"
+				"the sun is leaking the sun is leaking the sun is leaking"));
+			mb.setIcon(QMessageBox::Warning);
+			mb.addButton(QMessageBox::Yes);
+			mb.addButton(QMessageBox::No);
+			mb.setDefaultButton(QMessageBox::Yes);
+			mb.setCheckBox(cb);
+
+			if (mb.exec() == QMessageBox::No)
+				return true;
+
+			if (cb->isChecked())
+			{
+				Host::SetBaseBoolSettingValue("UI", "AutomaticRendererWarningShown", true);
+				Host::CommitBaseSettingChanges();
+			}
+		}
+	}
+
+	return QWidget::eventFilter(object, event);
 }
 
 void GraphicsSettingsWidget::onRendererChanged(int index)
