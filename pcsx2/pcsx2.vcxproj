@@ -4,6 +4,7 @@
   <Import Project="$(SolutionDir)common\vsprops\WinSDK.props" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6C7986C4-3E4D-4DCC-B3C6-6BB12B238995}</ProjectGuid>
+    <EnableSegmentHeap>true</EnableSegmentHeap>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
