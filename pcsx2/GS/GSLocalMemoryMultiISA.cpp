@@ -485,7 +485,7 @@ void GSLocalMemoryFunctions::WriteImage(GSLocalMemory& mem, int& tx, int& ty, co
 		{
 			for (int x = l; x < r; x++)
 			{
-				mem.WritePixel4(x, y, src[count >> 1] >> ((count & 1) << 2), BITBLTBUF.DBP, BITBLTBUF.DBW);
+				mem.WritePixel4(x & 0x7FF, y & 0x7FF, src[count >> 1] >> ((count & 1) << 2), BITBLTBUF.DBP, BITBLTBUF.DBW);
 				count++;
 			}
 		}
