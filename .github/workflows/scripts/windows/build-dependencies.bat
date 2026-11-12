@@ -71,7 +71,7 @@ set LIBSVTAV1=4.2.0
 set LIBX264=b35605ace3ddf7c1a5d67a2eb553f034aef41d55
 
 set FREETYPE=2.14.3
-set HARFBUZZ=14.2.0
+set HARFBUZZ=15.1.0
 set SDLMINOR=3.4.20
 set SDL=SDL3-%SDLMINOR%
 set LIBJPEGTURBO=3.2.0
@@ -115,7 +115,7 @@ call :downloadfile "SVT-AV1-v%LIBSVTAV1%.zip" "https://gitlab.com/AOMediaCodec/S
 call :downloadfile "x264-%LIBX264%.zip" "https://code.videolan.org/videolan/x264/-/archive/%LIBX264%.zip" d95d059eff81cc565165cd058b66e208f0cc9874106a8fe94a811a66cf8a85a2 || goto error
 
 call :downloadfile "freetype-%FREETYPE%.tar.gz" https://sourceforge.net/projects/freetype/files/freetype2/%FREETYPE%/freetype-%FREETYPE%.tar.gz/download e61b31ab26358b946e767ed7eb7f4bb2e507da1cfefeb7a8861ace7fd5c899a1 || goto error
-call :downloadfile "harfbuzz-%HARFBUZZ%.zip" https://github.com/harfbuzz/harfbuzz/archive/refs/tags/%HARFBUZZ%.zip bb2f83255706b1c92d731541c7cefaf98bb5b93e8f76d16f6deda05225ff20ee || goto error
+call :downloadfile "harfbuzz-%HARFBUZZ%.zip" https://github.com/harfbuzz/harfbuzz/archive/refs/tags/%HARFBUZZ%.zip 2d70b42da0ce4523d4299f0599c95394feda0638a0e2fee44f188a1608dcae75 || goto error
 call :downloadfile "lpng%LIBPNG%.zip" https://download.sourceforge.net/libpng/lpng1658.zip b32f170855dbbe3e6d9e645af40b538137041773672c3ba3e02db5816c82d376 || goto error
 call :downloadfile "lpng%LIBPNG%-apng.patch.gz" https://download.sourceforge.net/libpng-apng/libpng-%LIBPNGLONG%-apng.patch.gz eee7dea22ed502868017971c86c63c4ed1e6085de0baebfdcc3d3322f00f3eb0 || goto error
 call :downloadfile "libjpeg-turbo-%LIBJPEGTURBO%.tar.gz" "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/%LIBJPEGTURBO%/libjpeg-turbo-%LIBJPEGTURBO%.tar.gz" 6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e || goto error
