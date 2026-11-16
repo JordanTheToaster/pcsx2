@@ -110,7 +110,7 @@ VkSurfaceKHR VKSwapChain::CreateVulkanSurface(VkInstance instance, VkPhysicalDev
 			return VK_NULL_HANDLE;
 
 		VkMetalSurfaceCreateInfoEXT surface_create_info = {VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT, nullptr, 0,
-			static_cast<const CAMetalLayer*>(wi->surface_handle)};
+			static_cast<CAMetalLayer*>(wi->surface_handle)};
 
 		VkSurfaceKHR surface;
 		VkResult res = vkCreateMetalSurfaceEXT(instance, &surface_create_info, nullptr, &surface);
