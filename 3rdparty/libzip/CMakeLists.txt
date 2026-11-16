@@ -141,12 +141,14 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake-zipconf.h.in ${PROJECT_BINARY_D
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 
 add_library(zip STATIC
+  lib/siphash.c
   lib/zip_add.c
   lib/zip_add_dir.c
   lib/zip_add_entry.c
   lib/zip_algorithm_deflate.c
   lib/zip_buffer.c
   lib/zip_close.c
+  lib/zip_crypto.c
   lib/zip_delete.c
   lib/zip_dir_add.c
   lib/zip_dirent.c
@@ -196,9 +198,9 @@ add_library(zip STATIC
   lib/zip_name_locate.c
   lib/zip_new.c
   lib/zip_open.c
-  lib/zip_realloc.c
   lib/zip_pkware.c
   lib/zip_progress.c
+  lib/zip_realloc.c
   lib/zip_rename.c
   lib/zip_replace.c
   lib/zip_set_archive_comment.c
@@ -208,6 +210,7 @@ add_library(zip STATIC
   lib/zip_set_file_compression.c
   lib/zip_set_name.c
   lib/zip_source_accept_empty.c
+  lib/zip_source_at_eof.c
   lib/zip_source_begin_write.c
   lib/zip_source_begin_write_cloning.c
   lib/zip_source_buffer.c
