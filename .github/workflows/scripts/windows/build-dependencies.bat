@@ -274,7 +274,7 @@ rem --enable-small removes the display names of codecs, so instead we specify op
   --enable-muxer=avi,matroska,mov,mp3,mp4,wav ^
   --enable-protocol=file || goto error
 !MAKE_EXE! -j%NUMBER_OF_PROCESSORS% || goto error
-!MAKE_EXE! install || goto error
+!MAKE_EXE! V=1 install || goto error
 cd ..
 echo.
 
