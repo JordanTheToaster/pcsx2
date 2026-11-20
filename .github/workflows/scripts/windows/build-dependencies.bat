@@ -59,7 +59,7 @@ set QT=6.12.0
 set QTMINOR=6.12
 set QTAPNG=1.3.0
 
-set FFMPEG=9.0.1
+set FFMPEG=9.1
 set MAKE=4.4.1
 set MESON=1.10.2
 set PKGCONF=2.5.1
@@ -103,7 +103,7 @@ call :downloadfile "qttools-everywhere-src-%QT%.zip" "https://download.qt.io/off
 call :downloadfile "qttranslations-everywhere-src-%QT%.zip" "https://download.qt.io/official_releases/qt/%QTMINOR%/%QT%/submodules/qttranslations-everywhere-src-%QT%.zip" 286f0ca3ad669bc2d6fec0e209a797a08049d037c7a167e60eb3b4a640405aa5 || goto error
 call :downloadfile "QtApng-%QTAPNG%.zip" "https://github.com/jurplel/QtApng/archive/refs/tags/%QTAPNG%.zip" 5176082cdd468047a7eb1ec1f106b032f57df207aa318d559b29606b00d159ac || goto error
 
-call :downloadfile "ffmpeg-%FFMPEG%.tar.xz" "https://ffmpeg.org/releases/ffmpeg-%FFMPEG%.tar.xz" cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635 || goto error
+call :downloadfile "ffmpeg-%FFMPEG%.tar.xz" "https://ffmpeg.org/releases/ffmpeg-%FFMPEG%.tar.xz" 1a4d394ae63d190a526cd052eb4415c156b5c5e2df37efab41a7de0b8fde2433 || goto error
 call :downloadfile "make-%MAKE%-without-guile-w32-bin.zip" "https://sourceforge.net/projects/ezwinports/files/make-%MAKE%-without-guile-w32-bin.zip/download" fb66a02b530f7466f6222ce53c0b602c5288e601547a034e4156a512dd895ee7 || goto error
 call :downloadfile "meson-%MESON%.tar.gz" "https://github.com/mesonbuild/meson/releases/download/%MESON%/meson-%MESON%.tar.gz" 7890287d911dd4ee1ebd0efb61ed0321bfcd87c725df923a837cf90c6508f96b || goto error
 call :downloadfile "pkgconf-pkgconf-%PKGCONF%.zip" "https://github.com/pkgconf/pkgconf/archive/refs/tags/pkgconf-%PKGCONF%.zip" c5b5f88a2ca2324dc5d857e35bb145e24290e326357ea94a86d47b8d7fa15477 || goto error
@@ -246,7 +246,6 @@ echo "Installing FFmpeg..."
 rmdir /S /Q "ffmpeg-%FFMPEG%"
 tar xf "ffmpeg-%FFMPEG%.tar.xz" || goto error
 cd "ffmpeg-%FFMPEG%"
-%PATCH% -p1 < "%SCRIPTDIR%\ffmpeg-configure-escape.patch" || goto error
 if not !FOUND_NASM!==1 (
   rem MSVC LTO gives linker errors when building without nasm.
   rem The following patches fixes that issue.

@@ -61,7 +61,7 @@ set QT=6.12.0
 set QTMINOR=6.12
 set QTAPNG=1.3.0
 
-set FFMPEG=9.0.1
+set FFMPEG=9.1
 set GAS_PREPROC=ac1836309c2e77023c228b7184485597286289d3
 set MAKE=4.4.1
 set MESON=1.10.2
@@ -103,7 +103,7 @@ call :downloadfile "qttools-everywhere-src-%QT%.zip" "https://download.qt.io/off
 call :downloadfile "qttranslations-everywhere-src-%QT%.zip" "https://download.qt.io/official_releases/qt/%QTMINOR%/%QT%/submodules/qttranslations-everywhere-src-%QT%.zip" 286f0ca3ad669bc2d6fec0e209a797a08049d037c7a167e60eb3b4a640405aa5 || goto error
 call :downloadfile "QtApng-%QTAPNG%.zip" "https://github.com/jurplel/QtApng/archive/refs/tags/%QTAPNG%.zip" 5176082cdd468047a7eb1ec1f106b032f57df207aa318d559b29606b00d159ac || goto error
 
-call :downloadfile "ffmpeg-%FFMPEG%.tar.xz" "https://ffmpeg.org/releases/ffmpeg-%FFMPEG%.tar.xz" cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635 || goto error
+call :downloadfile "ffmpeg-%FFMPEG%.tar.xz" "https://ffmpeg.org/releases/ffmpeg-%FFMPEG%.tar.xz" 1a4d394ae63d190a526cd052eb4415c156b5c5e2df37efab41a7de0b8fde2433 || goto error
 call :downloadfile "gas-preprocessor.pl" "https://raw.githubusercontent.com/FFmpeg/gas-preprocessor/%GAS_PREPROC%/gas-preprocessor.pl" 7124d70cdecba7c5612f9a71fbf3f28514dd9c2ca3022f58ad793f88bb925fcf || goto error
 call :downloadfile "make-%MAKE%-without-guile-w32-bin.zip" "https://sourceforge.net/projects/ezwinports/files/make-%MAKE%-without-guile-w32-bin.zip/download" fb66a02b530f7466f6222ce53c0b602c5288e601547a034e4156a512dd895ee7 || goto error
 call :downloadfile "meson-%MESON%.tar.gz" "https://github.com/mesonbuild/meson/releases/download/%MESON%/meson-%MESON%.tar.gz" 7890287d911dd4ee1ebd0efb61ed0321bfcd87c725df923a837cf90c6508f96b || goto error

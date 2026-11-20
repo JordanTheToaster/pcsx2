@@ -21,7 +21,7 @@ fi
 QT=6.12.0
 QTAPNG=1.3.0
 
-FFMPEG=9.0.1
+FFMPEG=9.1
 LIBBACKTRACE=ad106d5fdd5d960bd33fae1c48a351af567fd075
 LIBJPEGTURBO=3.2.1
 LIBPNG=1.6.59
@@ -56,7 +56,7 @@ e4ab39534ec97987b1b9b60ef7f4d3253d5912a69f8c713a01753174a4029331  qtsvg-everywhe
 ae14d9bcf1bb3c300a3ab2e6a53f50284e5c6c966a4ac4cc5aedcb1bc74e4d02  qtwayland-everywhere-src-$QT.tar.xz
 f1d3be3489f758efe1a8f12118a212febbe611aa670af32e0159fa3c1feab2a6  QtApng-$QTAPNG.tar.gz
 
-cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635  ffmpeg-$FFMPEG.tar.xz
+1a4d394ae63d190a526cd052eb4415c156b5c5e2df37efab41a7de0b8fde2433  ffmpeg-$FFMPEG.tar.xz
 96e5c2d7f2c482a60d5804da48a2eb9a0db0719b2c65dcc169fbfdcf37f3a45d  libbacktrace-$LIBBACKTRACE.tar.gz
 c27ad72a68da151177929aa969ae773a2da5ac2af9ce946079314fdac8cece7f  libjpeg-turbo-$LIBJPEGTURBO.tar.gz
 d80dd2a38a37f803cb9b6ac7b14bd6e74ddc3b654780a8380bdf93523fdb4389  libpng-$LIBPNG.tar.xz
